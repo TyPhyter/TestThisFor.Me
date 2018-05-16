@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+var db = require('./models');
 
 
 const app = express();
@@ -15,9 +16,10 @@ app.set("view engine", "handlebars");
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const router = require('./controllers/burgers_controller');
-app.use('/', router);
-
-app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+//const router = require('./controllers/burgers_controller');
+//app.use('/', router);
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function () {
+        console.log("App listening on PORT " + PORT);
+    });
 });
