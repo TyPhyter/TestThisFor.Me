@@ -1,0 +1,15 @@
+Users have:
+    Many review requests
+    Many reviews
+    Many achievements/badges
+
+Review requests have:
+    One owner (most likely? maybe pooled group?)
+    One review type
+    One associated project
+    Many reviews
+
+Reviews have:
+    One associated project
+    One author
+
