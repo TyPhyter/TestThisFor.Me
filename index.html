@@ -14,10 +14,11 @@
     <script type="text/javascript">
 
         OAuth.initialize('CZqVop1givjJzfVWLm4K3YCalTg')
-        OAuth.popup('github').done(function (result) {
-            console.log(result)
-            // do some stuff with result
-        })
+        OAuth.popup('github').then(github => {
+            console.log(github);
+            // Retrieves user data from oauth provider
+            console.log(github.me());
+        });
 
     </script>
 </body>
