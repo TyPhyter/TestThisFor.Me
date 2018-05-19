@@ -2,126 +2,168 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="public/assets/js/oauth.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test This For Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="public/assets/css/style.css" />
+
 </head>
 
 <body>
     <button id="github">SIGN IN WITH GITHUB</button>
     <nav>
+        <!--Beginning Main Nav -->
         <div class="nav-wrapper grey lighten-4">
-        <div class="container">
-            <a href="#!" class="brand-logo">Logo</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <div class="container">
+                <a href="#!" class="brand-logo">
+                    <img src="public/assets/img/ttfm-logo-clr.svg" width="30" alt="TestThisForMe Logo"> TestThisFor.Me
+                </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
                 <ul class="right hide-on-med-and-down indigo-text text-darken-4">
-                    <li><a href="sass.html">Available Projects</a></li>
-                    <li><a href="badges.html">My Projects</a></li>
-                    <li><a href="collapsible.html">My Profile</a></li>
-                    <li><a href="mobile.html">Login/Sign Up</a></li>
+                    <li>
+                        <a href="#">Available Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">My Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">My Profile</a>
+                    </li>
+                    <li>
+                        <a href="#">Login/Sign Up</a>
+                    </li>
                 </ul>
-        </div>
+            </div>
         </div>
     </nav>
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
-        </ul>
-        <div class="container">
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row">
+
+    <ul class="sidenav" id="mobile-demo">
+        <!--Mobile Main Nav -->
+        <li>
+            <a href="#">Available Projects</a>
+        </li>
+        <li>
+            <a href="#">My Projects</a>
+        </li>
+        <li>
+            <a href="#">My Profile</a>
+        </li>
+        <li>
+            <a href="#">Login/Sign Up</a>
+        </li>
+    </ul>
+    <!--End Main Nav -->
+    <div class="container">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row">
             <div class="card col s5 m4">
-            <div class="card-content">
-                <p>New to TestThisFor.Me? Sign up! It takes only a few seconds to change your coding life!</p>
+                <div class="card-content">
+                    <p>New to TestThisFor.Me? Sign up! It takes only a few seconds to change your coding life!</p>
+                </div>
+                <div class="card-tabs">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab">
+                            <a href="#test4">Sign Up</a>
+                        </li>
+                        <li class="tab">
+                            <a href="#test5">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-content grey lighten-4">
+                    <div id="test4">
+                        <div class="row">
+                            <div class="card col s12 m12">
+                                <div class="row">
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="first_name" type="text" class="validate">
+                                                <label for="first_name">First Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="last_name" type="text" class="validate">
+                                                <label for="last_name">Last Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="user_name" type="text" class="validate">
+                                                <label for="user_name">User Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="password" type="password" class="validate">
+                                                <label for="password">Password</label>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <input id="email" type="email" class="validate">
+                                                <label for="email">Email</label>
+                                            </div>
+                                        </div>
+                                        <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="test5">
+                        <div class="row">
+                            <div class="card col s12 m12">
+                                <h3>Welcome Back!</h3>
+                                <div class="row">
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="user_name" type="text" class="validate">
+                                                <label for="user_name">User Name</label>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <input id="password" type="password" class="validate">
+                                                <label for="password">Password</label>
+                                            </div>
+                                        </div>
+                                        <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-tabs">
-                <ul class="tabs tabs-fixed-width">
-                    <li class="tab"><a href="#test4">Sign Up</a></li>
-                    <li class="tab"><a href="#test5">Sign In</a></li>
-                </ul>
+            <!-- main content     -->
+            <div class="card col s6 m7 offset-m1 offset-s1" id="content">
+                <div class="card-content">
+                    <h3>We are the best thing since sliced bread</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga necessitatibus dicta minima porro corporis
+                        velit hic, harum blanditiis reprehenderit repellat in ex, nulla veritatis exercitationem, ut cum
+                        quia expedita ipsum.</p>
+                </div>
             </div>
-            <div class="card-content grey lighten-4">
-                <div id="test4">
-                <div class="row">
-                <div class="card col s12 m12">
-                <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                    <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate">
-                            <label for="first_name">First Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="user_name" type="text" class="validate">
-                    <label for="user_name">User Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
-                </div>
-                <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
-                </div>
-                </div>
-                    <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
-                    </button>
-                </form>
-            </div>
-        </div>
-        </div>
-        </div>
-            <div id="test5">
-            <div class="row">
-            <div class="card col s12 m12">
-                <h3>Welcome Back!</h3>         
-            <div class="row">
-            <form class="col s12">
-                <div class="row">
-            <div class="input-field col s12">
-                <input id="user_name" type="text" class="validate">
-            <label for="user_name">User Name</label>
-        </div>
-            <div class="input-field col s12">
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
-            </div>
-        </div>
-            <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
-            </button>
-        </form>
-        </div>
-        </div>
         </div>
     </div>
-</div>
-</div>
-        <!-- main content     -->
-        <div class="card col s6 m7 offset-m1 offset-s1" id="content">
-            <div class="card-content">
-                <h3>We are the best thing since sliced bread</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga necessitatibus dicta minima porro corporis velit hic, harum blanditiis reprehenderit repellat in ex, nulla veritatis exercitationem, ut cum quia expedita ipsum.</p>
+    <!--End of Footer -->
+    <footer class="page-footer black">
+        <div class="footer-copyright">
+            <div class="container">
+                ©2018 Copyright TestThisFor.Me, All rights reserved. Tyler Jenkins, Allan Jones, and Grace Ho
+                <a class="grey-text text-lighten-4 right" href="#!">View Code</a>
             </div>
         </div>
-        </div>
-    </div>
-<footer>© Tyler Jenkins, Allan Jones, and Grace Ho 2018</footer>
+    </footer>
 
 
 
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script type="text/javascript" src="public/assets/js/main.js"></script>
     <script type="text/javascript">
         var githubButton = document.querySelector('#github');
         githubButton.addEventListener('click', function () {
