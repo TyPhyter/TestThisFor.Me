@@ -11,10 +11,22 @@ nav ul a{
     color: #1D1E50;
     font-size: 16px;
 }
+
+h2{
+    font-size: 26px;
+    text-align: center;
+    color: #1D1E50;
+}
+
  h3 {
      font-size: 18px;
      text-align: center;
  }
+
+li {
+    font-size: 18px;
+    color: #1D1E50;
+}
 
 .nav-wrapper {
     border-bottom: #91C73E 2px solid;
@@ -23,10 +35,6 @@ nav ul a{
 .btn {
     background-color: #1D1E50;
 }
-
-/* a.brand-logo {
-    margin-bottom: -20px;
-} */
 
 #content {
     background-color: #f5f5f5;
