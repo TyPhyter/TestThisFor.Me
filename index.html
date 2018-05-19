@@ -13,14 +13,13 @@
 </head>
 
 <body>
-    <button id="github">SIGN IN WITH GITHUB</button>
     <nav>
         <!--Beginning Main Nav -->
         <div class="nav-wrapper grey lighten-4">
             <div class="container">
                 <a href="#!" class="brand-logo">
-                    <img src="public/assets/img/ttfm-logo-clr.svg" width="30" alt="TestThisForMe Logo"> TestThisFor.Me
-                </a>
+                    <img id="ttfmLogo" src="public/assets/img/ttfm-logo-clr.svg"  alt="TestThisForMe Logo"><span id="navTitle">TestThisFor.Me</span></a>
+                    <!-- <h2 class="nav-text">TestThisFor.Me</h2> -->
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                     <i class="material-icons">menu</i>
                 </a>
@@ -114,7 +113,15 @@
                     <div id="test5">
                         <div class="row">
                             <div class="card col s12 m12">
-                                <h3>Welcome Back!</h3>
+                                <div class="row">
+                                    <h3>Sign in with your GitHub account</h3>
+                                </div>
+                                <div class="row">
+                                    <a href=""><img id="gitLogo" src="public/assets/img/if_mark-github_298822.png"></a>
+                                </div>
+                                <div class="row">
+                                    <h3>Welcome Back!</h3>
+                                </div>
                                 <div class="row">
                                     <form class="col s12">
                                         <div class="row">
