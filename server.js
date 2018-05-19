@@ -21,8 +21,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const router = require('./routes/router');
 const userRouter = require('./controllers/user-controller');
+const projectRouter = require('./controllers/project-controller');
+const testRouter = require('./controllers/test-controller');
 app.use('/', router);
 app.use('/', userRouter);
+app.use('/', projectRouter);
+app.use('/', testRouter);
+
 db.sequelize.sync().then(function() {
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
