@@ -11,20 +11,40 @@ nav ul a{
     color: #1D1E50;
     font-size: 16px;
 }
-
+ h3 {
+     font-size: 18px;
+     text-align: center;
+ }
 
 .nav-wrapper {
     border-bottom: #91C73E 2px solid;
 }
 
-
 .btn {
     background-color: #1D1E50;
 }
+
+/* a.brand-logo {
+    margin-bottom: -20px;
+} */
 
 #content {
     background-color: #f5f5f5;
     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
     -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0);
+}
+
+#ttfmLogo {
+    width: 70px;
+}
+
+#gitLogo {
+    display: block;
+    margin: auto;
+    width: 80px;
+}
+
+#navTitle {
+    padding-top: -50px;
 }
