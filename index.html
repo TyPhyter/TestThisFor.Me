@@ -10,15 +10,18 @@
 </head>
 
 <body>
-
+    <button id="github">SIGN IN WITH GITHUB</button>
     <script type="text/javascript">
-
-        OAuth.initialize('CZqVop1givjJzfVWLm4K3YCalTg')
-        OAuth.popup('github').then(github => {
-            console.log(github);
-            // Retrieves user data from oauth provider
-            console.log(github.me());
+        var githubButton = document.querySelector('#github');
+        githubButton.addEventListener('click', function () {
+            OAuth.initialize('CZqVop1givjJzfVWLm4K3YCalTg')
+            OAuth.popup('github').then(github => {
+                console.log(github);
+                // Retrieves user data from oauth provider
+                console.log(github.me());
+            });
         });
+
 
     </script>
 </body>
