@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 var db = require('./models');
 var OAuth = require('oauthio');
+const cors = require('cors');
 
 OAuth.initialize('CZqVop1givjJzfVWLm4K3YCalTg', 'AMG1CCYUZ9fUQbtHKVcDQJPYBe4');
 
@@ -12,6 +13,10 @@ const PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
+app.use(cors());
+app.options('*', cors());
 
 const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
