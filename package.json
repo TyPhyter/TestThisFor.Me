@@ -20,6 +20,7 @@
   "homepage": "https://github.com/TyPhyter/TestThisFor.Me#readme",
   "dependencies": {
     "browserify": "^16.2.2",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "mysql": "^2.15.0",
