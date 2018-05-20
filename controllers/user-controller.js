@@ -50,7 +50,7 @@ router.post('/users/github', (req, res) => {
             //probably send an error rather than the user object
             let userObj = responseArray[0];
             let createdNew = responseArray[1];
-            res.send(responseArray);
+            res.json(responseArray);
         })
 
     // res.render('index', {});
