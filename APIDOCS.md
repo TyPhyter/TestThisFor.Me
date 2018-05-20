@@ -9,8 +9,10 @@ A brief rundown of the routes in our API
   * expects body:
 ```javascript
     {
-        "email" : 'emailas@string.com'
-        "pass" : 'passString'
+        "email" : "emailas@string.com"
+        "pass" : "passString"
+        //or
+        "githubID" : "123456"
     }
     //using findOrCreate here so vvv
     //returns an array, [0] is user object, [1] is boolean representing if the user was newly created or simply found
@@ -28,10 +30,10 @@ A brief rundown of the routes in our API
   * expects body:
 ```javascript
     {
-        "title" : 'titleString'
-        "body" : 'bodyString',
-        "repoUrl" : 'http://repoUrl.com',
-        "hostedUrl" : 'http://hostedUrl.com',
+        "title" : "titleString"
+        "body" : "bodyString",
+        "repoUrl" : "http://repoUrl.com",
+        "hostedUrl" : "http://hostedUrl.com",
         "UserId" : 1 // an integer, who the project belongs to
     }
     // returns the project object
@@ -50,8 +52,8 @@ A brief rundown of the routes in our API
   * expects body:
 ```javascript
     {
-        "title" : 'titleString'
-        "body" : 'bodyString',
+        "title" : "titleString",
+        "body" : "bodyString",
         "UserId" : 1, // an integer
         "ProjectId" : 1 //an integer
     }

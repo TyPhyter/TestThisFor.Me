@@ -19,8 +19,10 @@
         <div class="nav-wrapper grey lighten-4">
             <div class="container">
                 <a href="#!" class="brand-logo">
-                    <img id="ttfmLogo" src="public/assets/img/ttfm-logo-clr.svg"  alt="TestThisForMe Logo"><span id="navTitle">TestThisFor.Me</span></a>
-                    <!-- <h2 class="nav-text">TestThisFor.Me</h2> -->
+                    <img id="ttfmLogo" src="public/assets/img/ttfm-logo-clr.svg" alt="TestThisForMe Logo">
+                    <span id="navTitle">TestThisFor.Me</span>
+                </a>
+                <!-- <h2 class="nav-text">TestThisFor.Me</h2> -->
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                     <i class="material-icons">menu</i>
                 </a>
@@ -118,7 +120,9 @@
                                     <h3>Sign in with your GitHub account</h3>
                                 </div>
                                 <div class="row">
-                                    <a href=""><img id="gitLogo" src="public/assets/img/if_mark-github_298822.png"></a>
+                                    <a href="">
+                                        <img id="gitLogo" src="public/assets/img/if_mark-github_298822.png">
+                                    </a>
                                 </div>
                                 <div class="row">
                                     <h3>Welcome Back!</h3>
@@ -181,12 +185,33 @@
             OAuth.initialize('CZqVop1givjJzfVWLm4K3YCalTg');
             OAuth.popup('github').then(github => {
                 githubToken = github;
-                githubUser = githubToken.me();
+                githubToken.me()
+                    .then((user) => {
+                        githubUser = user;
+                    });
                 console.log(githubToken);
                 // Retrieves user data from oauth provider
                 console.log(githubUser);
+
+                fetch('https://fast-sierra-15363.herokuapp.com/users', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    },
+                    mode: 'cors',
+                    cache: 'default'
+                })
+                    .then((response) => {
+                        console.log(response);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+                    
             });
         });
+
+
 
 
     </script>
