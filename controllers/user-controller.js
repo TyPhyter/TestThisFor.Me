@@ -4,9 +4,7 @@ var db = require("../models");
 
 
 
-//create user
 //find user
-//delete user
 router.get('/users/:id?', (req, res) => {
     if(req.params.id) {
         var userID = req.params.id;
@@ -24,12 +22,15 @@ router.get('/users/:id?', (req, res) => {
     // res.render('index', {});
 });
 
+//create user
 router.post('/users', (req, res) => {
     let email = req.body.email;
     //bcrypt this before saving it
     let pass = req.body.pass;
     db.User.findOrCreate({where: {email: email}})
         .then((responseArray) => {
+            //if the second index ([1]) is false, then the user already existed
+            //probably send an error rather than the user object
             let userObj = responseArray[0];
             let createdNew = responseArray[1];
             res.send(responseArray);
@@ -37,5 +38,24 @@ router.post('/users', (req, res) => {
 
     // res.render('index', {});
 });
+
+//create user via github login
+router.post('/users/github', (req, res) => {
+    
+    let githubID = req.body.githubID;
+
+    db.User.findOrCreate({where: { githubID }})
+        .then((responseArray) => {
+            //if the second index ([1]) is false, then the user already existed
+            //probably send an error rather than the user object
+            let userObj = responseArray[0];
+            let createdNew = responseArray[1];
+            res.json(responseArray);
+        })
+
+    // res.render('index', {});
+});
+
+//TO DO: delete user
 
 module.exports = router;

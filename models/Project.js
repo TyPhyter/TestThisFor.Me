@@ -3,7 +3,15 @@ module.exports = function(sequelize, DataTypes) {
         title: DataTypes.STRING,
         body: DataTypes.TEXT,
         repoUrl: DataTypes.STRING,
-        hostedUrl: DataTypes.STRING
+        hostedUrl: DataTypes.STRING,
+        closed: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        flagged: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        }
     });
 
     Project.associate = function (models) {

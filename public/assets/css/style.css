@@ -17,10 +17,17 @@ h6 {
 main {
   flex: 1 0 auto;
 }
+<<<<<<< HEAD
 
 .dash {
   margin-top: 2em;
 }
+=======
+ h3 {
+     font-size: 18px;
+     text-align: center;
+ }
+>>>>>>> 396888cbf4fc70e4a2b4d50d67cddca0ac49cfeb
 
 .tabs {
   background-color: transparent;
@@ -51,10 +58,13 @@ nav ul a {
   font-size: 16px;
 }
 
+<<<<<<< HEAD
 .nav-wrapper {
   border-bottom: #91c73e 2px solid;
 }
 
+=======
+>>>>>>> 396888cbf4fc70e4a2b4d50d67cddca0ac49cfeb
 .btn {
   background-color: #1d1e50;
 }
@@ -63,7 +73,12 @@ nav a.sidenav-trigger {
   display: inline !important;
 }
 
+/* a.brand-logo {
+    margin-bottom: -20px;
+} */
+
 #content {
+<<<<<<< HEAD
   background-color: #f5f5f5;
   -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
   -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
@@ -73,3 +88,24 @@ nav a.sidenav-trigger {
 .dash {
   margin-top: 2em;
 }
+=======
+    background-color: #f5f5f5;
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0);
+}
+
+#ttfmLogo {
+    width: 70px;
+}
+
+#gitLogo {
+    display: block;
+    margin: auto;
+    width: 80px;
+}
+
+#navTitle {
+    padding-top: -50px;
+}
+>>>>>>> 396888cbf4fc70e4a2b4d50d67cddca0ac49cfeb
