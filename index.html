@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="public/assets/css/style.css" />
+    <script src="./public/assets/js/oauth.js"></script>
 
 </head>
 
@@ -172,9 +173,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script type="text/javascript" src="public/assets/js/main.js"></script>
     <script type="text/javascript">
-        var githubButton = document.querySelector('#github');
-        githubButton.addEventListener('click', function () {
-            OAuth.initialize('CZqVop1givjJzfVWLm4K3YCalTg')
+        var githubButton = document.querySelector('#gitLogo');
+        githubButton.addEventListener('click', function (evt) {
+            evt.preventDefault();
+            OAuth.initialize('CZqVop1givjJzfVWLm4K3YCalTg');
             OAuth.popup('github').then(github => {
                 console.log(github);
                 // Retrieves user data from oauth provider
