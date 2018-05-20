@@ -174,13 +174,17 @@
     <script type="text/javascript" src="public/assets/js/main.js"></script>
     <script type="text/javascript">
         var githubButton = document.querySelector('#gitLogo');
+        var githubToken;
+        var githubUser;
         githubButton.addEventListener('click', function (evt) {
             evt.preventDefault();
             OAuth.initialize('CZqVop1givjJzfVWLm4K3YCalTg');
             OAuth.popup('github').then(github => {
-                console.log(github);
+                githubToken = github;
+                githubUser = githubToken.me();
+                console.log(githubToken);
                 // Retrieves user data from oauth provider
-                console.log(github.me());
+                console.log(githubUser);
             });
         });
 
