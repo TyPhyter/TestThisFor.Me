@@ -193,10 +193,13 @@
                 // Retrieves user data from oauth provider
                 console.log(githubUser);
 
-                fetch('https://fast-sierra-15363.herokuapp.com/users', {
+                fetch('https://fast-sierra-15363.herokuapp.com/users/github', {
                     method: 'POST',
                     headers: {
                         'Content-Type' : 'application/json'
+                    },
+                    body: {
+                        githubID
                     },
                     mode: 'cors',
                     cache: 'default'
