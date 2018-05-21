@@ -82,3 +82,12 @@ nav a.sidenav-trigger.profile {
 .summary {
   margin-top: 2rem;
 }
+
+/*  * * All  Projects * * */
+.collection {
+  border: 1px solid #f5f5f5;
+}
+
+.collection .collection-item {
+  background-color: transparent;
+}
