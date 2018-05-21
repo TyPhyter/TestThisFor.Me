@@ -71,7 +71,7 @@ router.post('/users', (req, res) => {
     }
 });
 
-//create user via github login
+//create (and/or login) user via github login
 router.post('/users/github', (req, res) => {
 
     let githubID = req.body.githubID;
@@ -90,12 +90,12 @@ router.post('/users/github', (req, res) => {
             } else {
                 let date = new Date();
                 //get logins array, push new date, set array, save
-                let loginsArray = user.logins.get();
+                let loginsArray = user.get('logins');
                 loginsArray.push(date.toISOString().slice(0, 19).replace('T', ' '));
                 user.logins = loginsArray;
                 user.save().then(() => {});
             }
-            res.json(responseArray);
+            res.json(JSON.stringify(responseArray));
         })
 
     // res.render('index', {});
