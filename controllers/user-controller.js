@@ -95,7 +95,7 @@ router.post('/users/github', (req, res) => {
                 user.logins = loginsArray;
                 user.save().then(() => {});
             }
-            res.json(JSON.stringify(responseArray));
+            res.json(responseArray);
         })
 
     // res.render('index', {});
