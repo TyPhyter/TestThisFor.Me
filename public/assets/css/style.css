@@ -32,12 +32,17 @@ li {
     border-bottom: #91C73E 2px solid;
 }
 
+
 .btn {
     background-color: #1D1E50;
 }
 
 i.material-icons {
     color: #1D1E50;
+}
+
+.iconFB {
+    float: right;
 }
 
 #content {
