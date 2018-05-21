@@ -36,7 +36,8 @@ router.post('/users', (req, res) => {
     let email = req.body.email;
     //bcrypt this before saving it
     let plainPass = req.body.pass;
-
+    let displayName = req.body.displayName;
+    console.log('POST /users', email, plainPass);
     if (email && plainPass) {
         db.User.findOne({ where: { email: email } })
             .then((user) => {
@@ -48,7 +49,7 @@ router.post('/users', (req, res) => {
                     bcrypt.hash(plainPass, 10)
                         .then((hash) => {
                             // Store hash in your password DB.
-                            db.User.create({ email: email, passwordHash: hash })
+                            db.User.create({ email: email, passwordHash: hash, displayName: displayName })
                                 .then((user) => {
                                     //mimicking findOrCreate, return away with a 'created' flag in index [1]
                                     //TO DO: render dashboard

@@ -94,19 +94,19 @@
                                                 <label for="last_name">Last Name</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input id="user_name" type="text" class="validate">
-                                                <label for="user_name">User Name</label>
+                                                <input id="su_user_name" type="text" class="validate">
+                                                <label for="su_user_name">User Name</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input id="password" type="password" class="validate">
-                                                <label for="password">Password</label>
+                                                <input id="su_password" type="password" class="validate">
+                                                <label for="su_password">Password</label>
                                             </div>
                                             <div class="input-field col s12">
-                                                <input id="email" type="email" class="validate">
-                                                <label for="email">Email</label>
+                                                <input id="su_email" type="email" class="validate">
+                                                <label for="su_email">Email</label>
                                             </div>
                                         </div>
-                                        <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
+                                        <button id="su_submit" class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
                                         </button>
                                     </form>
                                 </div>
@@ -131,15 +131,15 @@
                                     <form class="col s12">
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input id="user_name" type="text" class="validate">
-                                                <label for="user_name">User Name</label>
+                                                <input id="li_user_name" type="text" class="validate">
+                                                <label for="li_user_name">User Name</label>
                                             </div>
                                             <div class="input-field col s12">
-                                                <input id="password" type="password" class="validate">
-                                                <label for="password">Password</label>
+                                                <input id="li_password" type="password" class="validate">
+                                                <label for="li_password">Password</label>
                                             </div>
                                         </div>
-                                        <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
+                                        <button id="li_submit" class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
                                         </button>
                                     </form>
                                 </div>
@@ -176,51 +176,7 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
-    <script type="text/javascript">
-        var githubButton = document.querySelector('#gitLogo');
-        var githubToken;
-        var githubUser;
-        var serverResponse;
-        githubButton.addEventListener('click', function (evt) {
-            evt.preventDefault();
-            OAuth.initialize('CZqVop1givjJzfVWLm4K3YCalTg');
-            OAuth.popup('github').then(github => {
-                githubToken = github;
-                githubToken.me()
-                    .then((user) => {
-                        githubUser = user;
-                        console.log(githubUser);
-                        fetch('https://fast-sierra-15363.herokuapp.com/users/github', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({
-                                githubID: githubUser.id
-                            }),
-                            // mode: 'cors',
-                            // cache: 'default'
-                        })
-                            .then((response) => {
-                                return response.json();
-                            })
-                            .then((json) => {
-                                console.log(json);
-                            })
-                            .catch((err) => {
-                                console.log(err);
-                            });
-                    });
-                console.log(githubToken);
-                // Retrieves user data from oauth provider
-
-            });
-        });
-
-
-
-
-    </script>
+    <script type="text/javascript" src="/assets/js/login.js"></script>
 </body>
 
 </html>

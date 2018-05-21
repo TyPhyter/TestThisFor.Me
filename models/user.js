@@ -2,6 +2,7 @@ module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
         email: DataTypes.STRING,
         passwordHash: DataTypes.STRING,
+        displayName: DataTypes.STRING,
         githubID: DataTypes.STRING,
         //
         //GAMIFICATION PROPS
