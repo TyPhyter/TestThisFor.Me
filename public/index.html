@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test This For Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css" />
+    <script src="./assets/js/oauth.js"></script>
+
+</head>
+
+<body>
+    <nav>
+        <!--Beginning Main Nav -->
+        <div class="nav-wrapper grey lighten-4">
+            <div class="container">
+                <a href="#!" class="brand-logo">
+                    <img id="ttfmLogo" src="./assets/img/ttfm-logo-clr.svg" alt="TestThisForMe Logo" width="50">
+                    <span id="navTitle">TestThisFor.Me</span>
+                </a>
+                <!-- <h2 class="nav-text">TestThisFor.Me</h2> -->
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down indigo-text text-darken-4">
+                    <li>
+                        <a href="#">Available Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">My Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">My Profile</a>
+                    </li>
+                    <li>
+                        <a href="#">Login/Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <!--Mobile Main Nav -->
+        <li>
+            <a href="#">Available Projects</a>
+        </li>
+        <li>
+            <a href="#">My Projects</a>
+        </li>
+        <li>
+            <a href="#">My Profile</a>
+        </li>
+        <li>
+            <a href="#">Login/Sign Up</a>
+        </li>
+    </ul>
+    <!--End Main Nav -->
+    <main>
+        <div class="container">
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row">
+                <div class="card col s5 m4">
+                    <div class="card-content">
+                        <p>New to TestThisFor.Me? Sign up! It takes only a few seconds to change your coding life!</p>
+                    </div>
+                    <div class="card-tabs">
+                        <ul class="tabs tabs-fixed-width">
+                            <li class="tab">
+                                <a href="#test4">Sign Up</a>
+                            </li>
+                            <li class="tab">
+                                <a href="#test5">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-content grey lighten-4">
+                        <div id="test4">
+                            <div class="row">
+                                <div class="card col s12 m12">
+                                    <div class="row">
+                                        <form class="col s12">
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input id="first_name" type="text" class="validate">
+                                                    <label for="first_name">First Name</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="last_name" type="text" class="validate">
+                                                    <label for="last_name">Last Name</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="su_user_name" type="text" class="validate">
+                                                    <label for="su_user_name">User Name</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="su_password" type="password" class="validate">
+                                                    <label for="su_password">Password</label>
+                                                </div>
+                                                <div class="input-field col s12">
+                                                    <input id="su_email" type="email" class="validate">
+                                                    <label for="su_email">Email</label>
+                                                </div>
+                                            </div>
+                                            <button id="su_submit" class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="test5">
+                            <div class="row">
+                                <div class="card col s12 m12">
+                                    <div class="row">
+                                        <h3>Sign in with either your GitHub account or username!</h3>
+                                    </div>
+                                    <div class="row">
+                                        <a href="">
+                                            <img id="gitLogo" src="./assets/img/if_mark-github_298822.png">
+                                        </a>
+                                    </div>
+                                    <div class="row">
+                                        <form class="col s12">
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="li_user_name" type="text" class="validate">
+                                                    <label for="li_user_name">User Name</label>
+                                                </div>
+                                                <div class="input-field col s12">
+                                                    <input id="li_password" type="password" class="validate">
+                                                    <label for="li_password">Password</label>
+                                                </div>
+                                            </div>
+                                            <button id="li_submit" class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- main content     -->
+                <div class="card col s6 m7 offset-m1 offset-s1" id="content">
+                    <div class="card-content">
+                        <h2>What is TestThisFor.Me?</h2>
+                        <p>TestThisFor.Me is a peer based review process for developers. Just follow these easy steps: </p>
+                        <ol>
+                            <li>Create an account and you can access other developers' projects</li>
+                            <li>Test them out.</li>
+                            <li>Leave constructive criticism and feedback.</li>
+                            <li>Get some good kharma in the form of credits.</li>
+                            <li>Use your credits to post projects of your own.</li>
+                            <li>Receive feedback to make your own project stronger.</li>
+                            <li>Find other projects to test.</li>
+                            <li>Repeat steps 2 through 7.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--End of Footer -->
+    <footer class="page-footer black">
+        <div class="footer-copyright">
+            <div class="container">
+                ©2018 Copyright TestThisFor.Me, All rights reserved. Tyler Jenkins, Allan Jones, and Grace Ho
+                <a class="grey-text text-lighten-4 right" href="#!">View Code</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script type="text/javascript" src="./assets/js/login.js"></script>
+</body>
+
+</html>
