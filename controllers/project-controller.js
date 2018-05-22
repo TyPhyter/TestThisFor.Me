@@ -33,7 +33,7 @@ router.get('/projects/:id?', (req, res) => {
                 res.render('projectDetail', project.dataValues);
             });
     } else {
-        db.Project.findAll({})
+        db.Project.findAll({ order: [['updatedAt', 'DESC']] })
             .then((projects) => {
                 console.log(projects);
                 res.render('allProjects', projects);
@@ -45,7 +45,7 @@ router.get('/projects/:id?', (req, res) => {
 router.get('/projects/user/:id', (req, res) => {
 
     let id = req.params.id;
-    db.Project.findAll({ where: { UserId: id } })
+    db.Project.findAll({ where: { UserId: id }, order: [['updatedAt', 'DESC']] })
         .then((projects) => {
             res.send(projects);
         });
