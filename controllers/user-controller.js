@@ -57,7 +57,7 @@ router.post('/users', (req, res) => {
                                     //initialize the logins 'array' with the account created date
                                     user.logins = [date.toISOString().slice(0, 19).replace('T', ' ')];
                                     user.save().then(() => { });
-                                    res.json([user, true]);
+                                    res.redirect(`/dashboard/${user.id}`);
                                 });
                         });
                 }
@@ -80,7 +80,6 @@ router.post('/users/github', (req, res) => {
     db.User.findOrCreate({ where: { githubID } })
         .then((responseArray) => {
             //if the second index ([1]) is false, then the user already existed
-            //either way we're gonna send back the user info so client side can store the id
             let user = responseArray[0];
             let createdNew = responseArray[1];
             if (createdNew) {
@@ -96,10 +95,8 @@ router.post('/users/github', (req, res) => {
                 user.logins = loginsArray;
                 user.save().then(() => {});
             }
-            res.json(responseArray);
+            res.redirect(`/dashboard/${user.id}`);
         })
-
-    // res.render('index', {});
 });
 
 router.post('/users/login', (req, res) => {
