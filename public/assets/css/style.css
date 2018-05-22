@@ -131,3 +131,18 @@ pre {
 .feedback-heading {
   padding-top: 1.5em;
 }
+
+/* landing page */
+#gitLogo {
+    display: block;
+    margin: auto;
+    width:70px;
+}
+
+#ttfmLogo {
+    width: 70px;
+}
+
+#instructions {
+    width: 475px;
+}

@@ -124,7 +124,9 @@ router.post('/users/login', (req, res) => {
                                 loginsArray.push(date.toISOString().slice(0, 19).replace('T', ' '));
                                 user.logins = loginsArray;
                                 user.save().then(() => {});
-                                res.json(user);
+                                res.user = user;
+                                res.redirect('/dashboard');
+                                // res.json(user);
                             } else {
                                 res.status(403).send('Incorrect password');
                             }
