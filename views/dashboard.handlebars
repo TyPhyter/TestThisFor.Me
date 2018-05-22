@@ -1,82 +1,143 @@
-{{!-- landing page --}}
-<nav>
-    <!--Beginning Main Nav -->
-    <div class="nav-wrapper grey lighten-4">
-        <div class="container">
-            <a href="#!" class="brand-logo">
-                <img src="/assets/img/ttfm-logo-clr.svg" width="30" alt="TestThisForMe Logo"> TestThisFor.Me
-            </a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul class="right hide-on-med-and-down indigo-text text-darken-4">
-                <li>
-                    <a href="#">Available Projects</a>
+<body>
+    <main>
+        <nav>
+            <!--Beginning Main Nav -->
+            <div class="nav-wrapper grey lighten-4">
+                <div class="container">
+                    <a href="#!" class="brand-logo">
+                        <img src="/assets/img/ttfm-logo-clr.svg" width="50" alt="TestThisForMe Logo"> </a>
+                    <ul class="right hide-on-med-and-down indigo-text text-darken-4">
+                        <li>
+                            <a href="#">Available Projects</a>
+                        </li>
+                        <li>
+                            <a href="#">My Projects</a>
+                        </li>
+                        <li>
+                            <a href="#">My Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Login/Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--End Main Nav -->
+
+        <!--Profle Side Nav -->
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="/assets/img/profile-bg.jpg">
+                    </div>
+                    <a href="#user">
+                        <img class="circle" src="/assets/img/profile.jpg">
+                    </a>
+                    <a href="#name">
+                        <span class="white-text name">John Doe</span>
+                    </a>
+                    <a href="#email">
+                        <span class="white-text email">doeboy@gmail.com</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a href="#!">
+                    <i class="material-icons">card_membership</i>Joined May 2018
+                </a>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li>
+                <a href="#!">Badges
+                    <span class="new badge" data-badge-caption="Total">16</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!">Messages
+                    <span class="badge red-text" data-badge-caption="Unread">4</span>
+                </a>
+            </li>
+
+        </ul>
+        <!--End Profle Side Nav -->
+
+        <!-- My Project Dashboard -->
+        <div class="dash container">
+            <h4>My Projects</h4>
+            <ul class=" right tabs tabs-fixed-width">
+                <li class="tab">
+                    <a class="active" href="#current">Current</a>
                 </li>
-                <li>
-                    <a href="#">My Projects</a>
-                </li>
-                <li>
-                    <a href="#">My Profile</a>
-                </li>
-                <li>
-                    <a href="#">Login/Sign Up</a>
+                <li class="tab">
+                    <a href="#closed">Closed</a>
                 </li>
             </ul>
+            <div id="current" class="col s12">
+                <div class="row summary">
+                    <div id="checks" class="col m2 center-align">
+                        <i class="small material-icons">visibility</i>
+                        <br/>## VIEWS
+                    </div>
+                    <div id="checks" class="col m2 center-align">
+                        <i class="small material-icons">check</i>
+                        <br/>## CHECKS
+                    </div>
+                    <div id="question" class="col m8">
+                        <h5>Name of Query/Problem Title Goes Here</h5>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="row summary">
+                    <div id="checks" class="col m2 center-align">
+                        <i class="small material-icons">visibility</i>
+                        <br/>## VIEWS
+                    </div>
+                    <div id="checks" class="col m2 center-align">
+                        <i class="small material-icons">check</i>
+                        <br/>## CHECKS
+                    </div>
+                    <div id="question" class="col m8">
+                        <h5>Name of Query/Problem Title Goes Here</h5>
+                    </div>
+                </div>
+                <div class="divider"></div>
+
+
+            </div>
+            <div id="closed" class="col s12">
+                <div class="row summary">
+                    <div id="checks" class="col m2 center-align">
+                        <i class="small material-icons">visibility</i>
+                        <br/>## VIEWS
+                    </div>
+                    <div id="checks" class="col m2 center-align">
+                        <i class="small material-icons">check</i>
+                        <br/>## CHECKS
+                    </div>
+                    <div id="question" class="col m8">
+                        <h5>Name of Query/Problem Title Goes Here</h5>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </div>
         </div>
-    </div>
-</nav>
-
-<ul class="sidenav" id="mobile-demo">
-    <!--Mobile Main Nav -->
-    <li>
-        <a href="#">Available Projects</a>
-    </li>
-    <li>
-        <a href="#">My Projects</a>
-    </li>
-    <li>
-        <a href="#">My Profile</a>
-    </li>
-    <li>
-        <a href="#">Login/Sign Up</a>
-    </li>
-</ul>
-<!--End Main Nav -->
-
-
-<div class="container">
-
-    <ul class=" right tabs tabs-fixed-width tab-demo z-depth-1">
-        <li class="tab">
-            <a class="active" href="#current">Current</a>
-        </li>
-        <li class="tab">
-            <a href="#featured">Featured</a>
-        </li>
-        <li class="tab">
-            <a href="#closed">Closed</a>
-        </li>
-    </ul>
-    <div id="current" class="col s12">
-        <p>Test 1</p>
-    </div>
-    <div id="featured" class="col s12">
-        <p>Test 2</p>
-    </div>
-    <div id="closed" class="col s12">
-        <p>Test 3</p>
-    </div>
-
-
-
-</div>
-<!--End of Footer -->
-<footer class="page-footer black">
-    <div class="footer-copyright">
-        <div class="container">
-            ©2018 Copyright TestThisFor.Me, All rights reserved. Tyler Jenkins, Allan Jones, and Grace Ho
-            <a class="grey-text text-lighten-4 right" href="#!">View Code</a>
+    </main>
+    <!--End of Footer -->
+    <footer class="page-footer black main">
+        <div class="footer-copyright">
+            <div class="container">
+                ©2018 Copyright TestThisFor.Me, All rights reserved. Tyler Jenkins, Allan Jones, and Grace Ho
+                <a class="grey-text text-lighten-4 right" href="https://github.com/TyPhyter/TestThisFor.Me" target="_blank">View Code</a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>

@@ -29,6 +29,7 @@ signUpSubmitButton.addEventListener('click', function (evt) {
 var loginSubmitButton = document.querySelector('#li_submit');
 var redirectUri;
 loginSubmitButton.addEventListener('click', function (evt) {
+    console.log('click');
     evt.preventDefault();
     let localUri = 'http://localhost:8080/users/login';
     let productionUri = 'https://fast-sierra-15363.herokuapp.com/users/login';
@@ -43,16 +44,17 @@ loginSubmitButton.addEventListener('click', function (evt) {
             email: li_email,
             pass: li_password
         }),
-        redirect: 'follow'
+        // redirect: 'follow'
     })
     .then((response) => {
         console.log(response);
         redirectUri = response.url;
+        // return response.json();
         window.location.href = redirectUri;
+    })
+    .then((json) => {
+        console.log(json);
     });
-    // .then((html) => {
-    //     console.log(html);
-    // });
 });
 
 //github button

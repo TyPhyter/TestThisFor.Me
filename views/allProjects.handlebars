@@ -1,0 +1,196 @@
+<main>
+    <nav>
+        <!--Beginning Main Nav -->
+        <div class="nav-wrapper grey lighten-4">
+            <div class="container">
+                <a href="#!" class="brand-logo">
+                    <img src="/assets/img/ttfm-logo-clr.svg" width="50" alt="TestThisForMe Logo">
+                </a>
+                <ul class="right hide-on-med-and-down indigo-text text-darken-4">
+                    <li>
+                        <a href="#">Available Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">My Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">My Profile</a>
+                    </li>
+                    <li>
+                        <a href="#">Login/Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <!--Mobile Main Nav -->
+        <li>
+            <a href="#">Available Projects</a>
+        </li>
+        <li>
+            <a href="#">My Projects</a>
+        </li>
+        <li>
+            <a href="#">My Profile</a>
+        </li>
+        <li>
+            <a href="#">Login/Sign Up</a>
+        </li>
+    </ul>
+    <!--End Main Nav -->
+
+    <!-- My Project Dashboard -->
+    <div class="dash container">
+        <h4 class="avail">Available Projects</h4>
+        <ul class=" right tabs tabs-fixed-width">
+            <li class="tab">
+                <a class="active" href="#trending">Trending</a>
+            </li>
+            <li class="tab">
+                <a href="#today">Today</a>
+            </li>
+            <li class="tab">
+                <a href="#week">This Week</a>
+            </li>
+            <li class="tab">
+                <a href="#month">This Month</a>
+            </li>
+        </ul>
+        <div id="trending" class="col s12">
+            <ul class="collection">
+                {{#each this}} {{#if this.title}}
+                <li class="collection-item avatar">
+                    <a href="/projects/{{this.id}}">
+                        <i class="material-icons circle">person</i>
+                        <h5>{{ this.title }}</h5>
+                        <a href="#!" class="secondary-content">
+                            <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                        </a>
+                    </a>
+                </li>
+                {{/if}} {{/each}}
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">person</i>
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">person</i>
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+                <li class="collection-item avatar">
+                    <img src="/assets/img/profile.jpg" alt="" class="circle">
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">person</i>
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="today" class="col s12">
+            <ul class="collection">
+                <li class="collection-item avatar">
+                    <img src="/assets/img/profile.jpg" alt="" class="circle">
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="week" class="col s12">
+            <ul class="collection">
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">person</i>
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">person</i>
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+                </li>
+            </ul>
+        </div>
+        <div id="month" class="col s12">
+            <ul class="collection">
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">person</i>
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">person</i>
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+                <li class="collection-item avatar">
+                    <img src="/assets/img/profile.jpg" alt="" class="circle">
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">person</i>
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+                <li class="collection-item avatar">
+                    <img src="/assets/img/profile.jpg" alt="" class="circle">
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">person</i>
+                    <h5>Question Title Goes Here</h5>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</main>
+<!--End of Footer -->
+<footer class="page-footer black main">
+    <div class="footer-copyright">
+        <div class="container">
+            ©2018 Copyright TestThisFor.Me, All rights reserved. Tyler Jenkins, Allan Jones, and Grace Ho
+            <a class="grey-text text-lighten-4 right" href="https://github.com/TyPhyter/TestThisFor.Me" target="_blank">View Code</a>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script>

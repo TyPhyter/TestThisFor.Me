@@ -107,7 +107,12 @@ router.post('/users/login', (req, res) => {
     let plainPass = req.body.pass;
     if (email && plainPass) {
         //find user with provided email
-        db.User.findOne({ where: { email: email } })
+        //include all relevant info on user object
+        //ie Projects, Tests...
+        db.User.findOne({ 
+            where: { email: email },
+            include: [{ all: true }] 
+        })
             .then((user) => {
                 if (user) {
                     //if we match an email, compare provided pass with hash via bcrypt

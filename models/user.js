@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
             defaultValue: 0
         },
         projects: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             // allowNull: false,
             get() {
                 return this.getDataValue('projects').split(';')
@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
             defaultValue: ""
         },
         tests: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             // allowNull: false,
             get() {
                 return this.getDataValue('tests').split(';')
@@ -34,7 +34,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         //the logins "array"
         logins: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             // allowNull: false,
             get() {
                 return this.getDataValue('logins').split(';')

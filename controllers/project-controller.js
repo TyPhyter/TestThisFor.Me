@@ -29,12 +29,14 @@ router.get('/projects/:id?', (req, res) => {
         let id = req.params.id;
         db.Project.findById(id)
             .then((project) => {
-                res.send(project);
+                console.log(project.dataValues);
+                res.render('projectDetail', project.dataValues);
             });
     } else {
         db.Project.findAll({})
             .then((projects) => {
-                res.send(projects);
+                console.log(projects);
+                res.render('allProjects', projects);
             });
     }
 });
@@ -44,8 +46,8 @@ router.get('/projects/user/:id', (req, res) => {
 
     let id = req.params.id;
     db.Project.findAll({ where: { UserId: id } })
-        .then((project) => {
-            res.send(project);
+        .then((projects) => {
+            res.send(projects);
         });
 
 });
