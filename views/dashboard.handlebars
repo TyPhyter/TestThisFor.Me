@@ -42,7 +42,7 @@
                         <span class="white-text name">{{ displayName }}</span>
                     </a>
                     <a href="#email">
-                        <span class="white-text email">doeboy@gmail.com</span>
+                        <span class="white-text email">{{ email }}</span>
                     </a>
                 </div>
             </li>
@@ -80,6 +80,19 @@
                 </li>
             </ul>
             <div id="current" class="col s12">
+                <ul class="collection">
+                {{#each this}} {{#if this.title}}
+                <li class="collection-item avatar">
+                    <a href="/projects/{{this.id}}">
+                        <i class="material-icons circle">person</i>
+                        <h5>{{ this.title }}</h5>
+                        <a href="#!" class="secondary-content">
+                            <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                        </a>
+                    </a>
+                </li>
+                {{/if}} {{/each}}
+                </ul>
                 <div class="row summary">
                     <div id="checks" class="col m2 center-align">
                         <i class="small material-icons">visibility</i>
