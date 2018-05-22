@@ -1,10 +1,9 @@
-// tabs to work
+// Initialize
 $(document).ready(function() {
+  // tabs to work
   $(".tabs").tabs();
-});
-
-// Initialize Mobile Nav - Sidebar
-$(document).ready(function() {
+  // collapsible items
+  $(".collapsible").collapsible();
+  // Initialize Mobile Nav - Sidebar
   $(".sidenav").sidenav();
 });
-ß;
