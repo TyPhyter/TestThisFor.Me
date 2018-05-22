@@ -150,12 +150,6 @@ router.post('/users/login', (req, res) => {
 
 });
 
-router.get('/dashboard', function(req, res) {
-    res.render('dashboard', res.user);
-});
-
-
-
 //TO DO: delete user
 
 module.exports = router;

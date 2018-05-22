@@ -27,7 +27,7 @@ signUpSubmitButton.addEventListener('click', function (evt) {
 
 //login submit
 var loginSubmitButton = document.querySelector('#li_submit');
-
+var redirectUri;
 loginSubmitButton.addEventListener('click', function (evt) {
     evt.preventDefault();
     let localUri = 'http://localhost:8080/users/login';
@@ -42,17 +42,16 @@ loginSubmitButton.addEventListener('click', function (evt) {
         body: JSON.stringify({
             email: li_email,
             pass: li_password
-        })
+        }),
+        redirect: 'follow'
     })
     .then((response) => {
         console.log(response);
-        return response.text();
-    })
-    .then((html) => {
-        console.log(html);
+        redirectUri = response.url;
+        window.location.href = redirectUri;
     });
-    // .then((json) => {
-    //     console.log(json);
+    // .then((html) => {
+    //     console.log(html);
     // });
 });
 
