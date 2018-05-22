@@ -126,17 +126,20 @@
 
             </div>
             <div id="closed" class="col s12">
-                {{#each Projects}} {{#if this.dataValues.title}} {{#if this.dataValues.closed }}
-                <li class="collection-item avatar">
-                    <a href="/projects/{{this.dataValues.id}}">
-                        <i class="material-icons circle">person</i>
-                        <h5>{{ this.dataValues.title }}</h5>
-                        <a href="#!" class="secondary-content">
-                            <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                <ul class="collection">
+                    {{#each Projects}} {{#if this.dataValues.title}} {{#if this.dataValues.closed }}
+                    <li class="collection-item avatar">
+                        <a href="/projects/{{this.dataValues.id}}">
+                            <i class="material-icons circle">person</i>
+                            <h5>{{ this.dataValues.title }}</h5>
+                            <a href="#!" class="secondary-content">
+                                <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                            </a>
                         </a>
-                    </a>
-                </li>
-                {{/if}} {{/if}} {{/each}} {{!--
+                    </li>
+                    {{/if}} {{/if}} {{/each}}
+                </ul>
+                {{!--
                 <div class="row summary">
                     <div id="checks" class="col m2 center-align">
                         <i class="small material-icons">visibility</i>
