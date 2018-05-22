@@ -130,7 +130,7 @@ router.post('/users/login', (req, res) => {
                                 user.logins = loginsArray;
                                 user.save().then(() => {});
                                 res.user = user;
-                                res.redirect('/dashboard');
+                                res.redirect(`/dashboard`);
                                 // res.json(user);
                             } else {
                                 res.status(403).send('Incorrect password');

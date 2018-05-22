@@ -10,7 +10,12 @@ router.get('/', (req, res) => {
 });
 
 router.get('/dashboard', function(req, res) {
-    res.render('dashboard', res.user);
+    if(res.user){
+        res.render('dashboard', res.user);
+    } else {
+        res.render('index');
+    }
+    
 });
 
 module.exports = router;
