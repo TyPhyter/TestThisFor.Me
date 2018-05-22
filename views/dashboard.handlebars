@@ -81,18 +81,33 @@
             </ul>
             <div id="current" class="col s12">
                 <ul class="collection">
-                {{#each Projects}} {{#if this.dataValues.title}}
-                <li class="collection-item avatar">
-                    <a href="/projects/{{this.dataValues.id}}">
-                        <i class="material-icons circle">person</i>
-                        <h5>{{ this.dataValues.title }}</h5>
-                        <a href="#!" class="secondary-content">
-                            <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                    {{#each Projects}} {{#if this.dataValues.title}}
+                    <li class="collection-item avatar">
+                        <a href="/projects/{{this.dataValues.id}}">
+                            <i class="material-icons circle">person</i>
+                            <h5>{{ this.dataValues.title }}</h5>
+                            <a href="#!" class="secondary-content">
+                                <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                            </a>
                         </a>
-                    </a>
-                </li>
-                {{/if}} {{/each}}
+                    </li>
+                    {{/if}} {{/each}}
                 </ul>
+                {{#each Projects}} {{#if this.dataValues.title}}
+                <div class="row summary">
+                    <div id="checks" class="col m2 center-align">
+                        <i class="small material-icons">visibility</i>
+                        <br/>## VIEWS
+                    </div>
+                    <div id="checks" class="col m2 center-align">
+                        <i class="small material-icons">check</i>
+                        <br/>## CHECKS
+                    </div>
+                    <div id="question" class="col m8">
+                        <h5>{{ this.dataValues.title }}</h5>
+                    </div>
+                </div>
+                {{/if}} {{/each}}
                 <div class="row summary">
                     <div id="checks" class="col m2 center-align">
                         <i class="small material-icons">visibility</i>
