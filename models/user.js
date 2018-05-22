@@ -4,34 +4,47 @@ module.exports = function(sequelize, DataTypes) {
         passwordHash: DataTypes.STRING,
         displayName: DataTypes.STRING,
         githubID: DataTypes.STRING,
+        githubName: DatTypes.STRING,
+        avatarUrl: DatTypes.STRING,
         //
         //GAMIFICATION PROPS
         points: {
             type: DataTypes.INTEGER,
             defaultValue: 0
         },
-        projects: {
+        badges: {
             type: DataTypes.TEXT,
             // allowNull: false,
             get() {
-                return this.getDataValue('projects').split(';')
+                return this.getDataValue('badges').split(';')
             },
             set(val) {
-               this.setDataValue('projects',val.join(';'));
+               this.setDataValue('badges',val.join(';'));
             },
             defaultValue: ""
         },
-        tests: {
-            type: DataTypes.TEXT,
-            // allowNull: false,
-            get() {
-                return this.getDataValue('tests').split(';')
-            },
-            set(val) {
-               this.setDataValue('tests',val.join(';'));
-            },
-            defaultValue: ""
-        },
+        // projects: {
+        //     type: DataTypes.TEXT,
+        //     // allowNull: false,
+        //     get() {
+        //         return this.getDataValue('projects').split(';')
+        //     },
+        //     set(val) {
+        //        this.setDataValue('projects',val.join(';'));
+        //     },
+        //     defaultValue: ""
+        // },
+        // tests: {
+        //     type: DataTypes.TEXT,
+        //     // allowNull: false,
+        //     get() {
+        //         return this.getDataValue('tests').split(';')
+        //     },
+        //     set(val) {
+        //        this.setDataValue('tests',val.join(';'));
+        //     },
+        //     defaultValue: ""
+        // },
         //the logins "array"
         logins: {
             type: DataTypes.TEXT,

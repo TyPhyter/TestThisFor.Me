@@ -95,7 +95,8 @@ router.post('/users/github', (req, res) => {
                 user.logins = loginsArray;
                 user.save().then(() => {});
             }
-            res.redirect(`/dashboard/${user.id}`);
+            // res.redirect(`/dashboard/${user.id}`);
+            res.send(user);
         })
 });
 
