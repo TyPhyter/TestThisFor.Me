@@ -164,7 +164,7 @@ router.get('/dashboard/:id', function(req, res) {
         })
         .then((user) => {
             console.log(user);
-            res.render('dashboard', user);
+            res.render('dashboard', user.dataValues);
         })
         
     } else {
