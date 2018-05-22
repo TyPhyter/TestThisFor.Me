@@ -11,7 +11,8 @@ module.exports = function(sequelize, DataTypes) {
         flagged: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
-        }
+        },
+        authorAvatarUrl: DataTypes.STRING
     });
 
     Project.associate = function (models) {
