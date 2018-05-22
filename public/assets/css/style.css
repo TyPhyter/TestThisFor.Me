@@ -123,3 +123,18 @@ pre {
   margin-top: 100px;
   color: #1d1e50;
 }
+
+/* landing page */
+#gitLogo {
+    display: block;
+    margin: auto;
+    width:70px;
+}
+
+#ttfmLogo {
+    width: 70px;
+}
+
+#instructions {
+    width: 475px;
+}
