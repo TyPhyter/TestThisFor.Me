@@ -130,7 +130,7 @@ router.post('/users/login', (req, res) => {
                                 user.logins = loginsArray;
                                 user.save().then(() => {});
                                 res.user = user;
-                                res.redirect(`/dashboard`);
+                                res.redirect(`/dashboard/${user.id}`);
                                 // res.json(user);
                             } else {
                                 res.status(403).send('Incorrect password');
@@ -153,6 +153,24 @@ router.post('/users/login', (req, res) => {
     }
 
 
+});
+
+router.get('/dashboard/:id', function(req, res) {
+    let userID = req.params.id;
+    if(userID){
+        db.User.findOne({ 
+            where: { email: email },
+            include: [{ all: true }] 
+        })
+        .then((user) => {
+            console.log(user);
+            res.render('dashboard', user);
+        })
+        
+    } else {
+        res.redirect('/');
+    }
+    
 });
 
 //TO DO: delete user
