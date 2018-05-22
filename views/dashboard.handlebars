@@ -81,7 +81,7 @@
             </ul>
             <div id="current" class="col s12">
                 <ul class="collection">
-                    {{#each Projects}} {{#if this.dataValues.title}}
+                    {{#each Projects}} {{#if this.dataValues.title}} {{#unless this.dataValues.closed }}
                     <li class="collection-item avatar">
                         <a href="/projects/{{this.dataValues.id}}">
                             <i class="material-icons circle">person</i>
@@ -91,23 +91,9 @@
                             </a>
                         </a>
                     </li>
-                    {{/if}} {{/each}}
+                    {{/unless}}{{/if}} {{/each}}
                 </ul>
-                {{#each Projects}} {{#if this.dataValues.title}}
-                <div class="row summary">
-                    <div id="checks" class="col m2 center-align">
-                        <i class="small material-icons">visibility</i>
-                        <br/>## VIEWS
-                    </div>
-                    <div id="checks" class="col m2 center-align">
-                        <i class="small material-icons">check</i>
-                        <br/>## CHECKS
-                    </div>
-                    <div id="question" class="col m8">
-                        <h5>{{ this.dataValues.title }}</h5>
-                    </div>
-                </div>
-                {{/if}} {{/each}}
+                {{!--
                 <div class="row summary">
                     <div id="checks" class="col m2 center-align">
                         <i class="small material-icons">visibility</i>
@@ -135,11 +121,22 @@
                         <h5>Name of Query/Problem Title Goes Here</h5>
                     </div>
                 </div>
-                <div class="divider"></div>
+                <div class="divider"></div> --}}
 
 
             </div>
             <div id="closed" class="col s12">
+                {{#each Projects}} {{#if this.dataValues.title}} {{#if this.dataValues.closed }}
+                <li class="collection-item avatar">
+                    <a href="/projects/{{this.dataValues.id}}">
+                        <i class="material-icons circle">person</i>
+                        <h5>{{ this.dataValues.title }}</h5>
+                        <a href="#!" class="secondary-content">
+                            <i class="material-icons light-green-text accent-3">arrow_forward</i>
+                        </a>
+                    </a>
+                </li>
+                {{/if}} {{/if}} {{/each}} {{!--
                 <div class="row summary">
                     <div id="checks" class="col m2 center-align">
                         <i class="small material-icons">visibility</i>
@@ -152,7 +149,7 @@
                     <div id="question" class="col m8">
                         <h5>Name of Query/Problem Title Goes Here</h5>
                     </div>
-                </div>
+                </div> --}}
                 <div class="divider"></div>
             </div>
         </div>
