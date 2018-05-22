@@ -159,7 +159,7 @@ router.get('/dashboard/:id', function(req, res) {
     let userID = req.params.id;
     if(userID){
         db.User.findOne({ 
-            where: { email: email },
+            where: { id: userID },
             include: [{ all: true }] 
         })
         .then((user) => {
