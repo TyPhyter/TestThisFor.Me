@@ -81,11 +81,11 @@
             </ul>
             <div id="current" class="col s12">
                 <ul class="collection">
-                {{#each this}} {{#if this.title}}
+                {{#each Projects}} {{#if this.dataValues.title}}
                 <li class="collection-item avatar">
-                    <a href="/projects/{{this.id}}">
+                    <a href="/projects/{{this.dataValues.id}}">
                         <i class="material-icons circle">person</i>
-                        <h5>{{ this.title }}</h5>
+                        <h5>{{ this.dataValues.title }}</h5>
                         <a href="#!" class="secondary-content">
                             <i class="material-icons light-green-text accent-3">arrow_forward</i>
                         </a>
