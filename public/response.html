@@ -5,10 +5,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Test This For Me</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="public/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
     <script src="./public/assets/js/oauth.js"></script>
 
 </head>
@@ -19,7 +20,7 @@
         <div class="nav-wrapper grey lighten-4">
             <div class="container">
                 <a href="#!" class="brand-logo">
-                    <img id="ttfmLogo" src="public/assets/img/ttfm-logo-clr.svg" alt="TestThisForMe Logo">
+                    <img id="ttfmLogo" src="./assets/img/ttfm-logo-clr.svg" alt="TestThisForMe Logo">
                     <span id="navTitle">TestThisFor.Me</span>
                 </a>
                 <!-- <h2 class="nav-text">TestThisFor.Me</h2> -->
@@ -60,29 +61,46 @@
         </li>
     </ul>
     <!--End Main Nav -->
-    <div class="container">
-        <div class="row"></div>
-        <div class="row"></div>
-        <h2 id="projectName">My Project Name</h2>
-        <div class="row">
-            <ul class="collapsible">
-                <li>
-                    <div class="collapsible-header"><span><i class="material-icons iconFB">flag</i></span>First Tester Feedback
-                    </div>
-                    <div class="collapsible-body"><span>I'm a troll and therefore I hate everything.</span></div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><span><i class="material-icons iconFB">flag</i></span>Second Tester Feedback</div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><span><i class="material-icons iconFB">flag</i></span>Third Tester Feedback</div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-            </ul>
-        </div>                    
-</div>
-    <!--End of Footer -->
+    <main>
+        <div class="container">
+            <div class="row"></div>
+            <div class="row"></div>
+            <h2 id="projectName">My Project Name</h2>
+            <div class="row">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">
+                            <span>
+                                <i class="material-icons iconFB">flag</i>
+                            </span>First Tester Feedback
+                        </div>
+                        <div class="collapsible-body">
+                            <span>I'm a troll and therefore I hate everything.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <span>
+                                <i class="material-icons iconFB">flag</i>
+                            </span>Second Tester Feedback</div>
+                        <div class="collapsible-body">
+                            <span>Lorem ipsum dolor sit amet.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <span>
+                                <i class="material-icons iconFB">flag</i>
+                            </span>Third Tester Feedback</div>
+                        <div class="collapsible-body">
+                            <span>Lorem ipsum dolor sit amet.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
     <footer class="page-footer black">
         <div class="footer-copyright">
             <div class="container">
@@ -98,7 +116,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script type="text/javascript" src="public/assets/js/main.js"></script>
+    <script type="text/javascript" src="./assets/js/main.js"></script>
     <script type="text/javascript">
         var githubButton = document.querySelector('#gitLogo');
         var githubToken;
