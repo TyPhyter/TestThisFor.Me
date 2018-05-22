@@ -55,8 +55,13 @@
                 <div class="divider"></div>
             </li>
             <li>
+                <a href="#!">Credits
+                    <span class="badge red-text" data-badge-caption="Unread">{{ points }}</span>
+                </a>
+            </li>
+            <li>
                 <a href="#!">Badges
-                    <span class="new badge" data-badge-caption="Total">16</span>
+                    <span class="new badge" data-badge-caption="Total">05</span>
                 </a>
             </li>
             <li>
@@ -92,6 +97,10 @@
                         </a>
                     </li>
                     {{/unless}}{{/if}} {{/each}}
+                    {{#unless Projects[0].dataValues.title}}
+                    <div>Looks like you haven't posted any projects yet!</div>
+                    <a class="btn-large" href="/projects/post">SHOW ME HOW</a>
+                    {{/unless}}
                 </ul>
                 {{!--
                 <div class="row summary">
