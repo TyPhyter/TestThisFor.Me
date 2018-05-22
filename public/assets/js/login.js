@@ -4,7 +4,7 @@ var signUpSubmitButton = document.querySelector('#su_submit');
 signUpSubmitButton.addEventListener('click', function (evt) {
     evt.preventDefault();
     let localUri = 'http://localhost:8080/users/';
-    let productionUri = 'https://fast-sierra-15363.herokuapp.com/users/';
+    let productionUri = 'http://www.testthisfor.me/users/';
     let su_email = document.querySelector('#su_email').value.trim();
     let su_password = document.querySelector('#su_password').value.trim();
     let displayName = document.querySelector('#su_user_name').value.trim();
@@ -38,7 +38,7 @@ loginSubmitButton.addEventListener('click', function (evt) {
     console.log('click');
     evt.preventDefault();
     let localUri = 'http://localhost:8080/users/login';
-    let productionUri = 'https://fast-sierra-15363.herokuapp.com/users/login';
+    let productionUri = 'http://www.testthisfor.me/users/login';
     let li_email = document.querySelector('#li_user_name').value.trim();
     let li_password = document.querySelector('#li_password').value.trim();
     fetch(productionUri, {
@@ -78,7 +78,7 @@ githubButton.addEventListener('click', function (evt) {
             .then((user) => {
                 githubUser = user;
                 console.log(githubUser);
-                fetch('https://fast-sierra-15363.herokuapp.com/users/github', {
+                fetch('http://www.testthisfor.me/users/github', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
