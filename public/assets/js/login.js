@@ -45,11 +45,15 @@ loginSubmitButton.addEventListener('click', function (evt) {
         })
     })
     .then((response) => {
-        return response.json();
+        console.log(response);
+        return response.text();
     })
-    .then((json) => {
-        console.log(json);
+    .then((html) => {
+        console.log(html);
     });
+    // .then((json) => {
+    //     console.log(json);
+    // });
 });
 
 //github button
