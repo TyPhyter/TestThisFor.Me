@@ -20,7 +20,11 @@ signUpSubmitButton.addEventListener('click', function (evt) {
         })
     })
     .then((response) => {
-        return response.json();
+        // maybe save token here
+        console.log(response);
+        redirectUri = response.url;
+        // return response.json();
+        window.location.href = redirectUri;
     })
     .then((json) => {
         console.log(json);
@@ -49,6 +53,7 @@ loginSubmitButton.addEventListener('click', function (evt) {
         // redirect: 'follow'
     })
     .then((response) => {
+        //maybe save token here
         console.log(response);
         redirectUri = response.url;
         // return response.json();
@@ -84,18 +89,18 @@ githubButton.addEventListener('click', function (evt) {
                     // mode: 'cors',
                     // cache: 'default'
                 })
-                    .then((response) => {
-                        return response.json();
-                    })
-                    .then((json) => {
-                        console.log(json);
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    });
+                .then((response) => {
+                    //maybe save token here
+                    console.log(response);
+                    redirectUri = response.url;
+                    // return response.json();
+                    window.location.href = redirectUri;
+                })
+                .then((json) => {
+                    console.log(json);
+                });
             });
         console.log(githubToken);
-        // Retrieves user data from oauth provider
 
     });
 });
