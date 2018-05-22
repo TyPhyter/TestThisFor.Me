@@ -120,8 +120,16 @@ pre {
 }
 #navTitle {
   vertical-align: top;
+  font-size: 0.875em;
   margin-top: 100px;
   color: #1d1e50;
+  font-family: "Lato", sans-serif;
+}
+
+/* * *  Feedback * * */
+
+.feedback-heading {
+  padding-top: 1.5em;
 }
 
 /* landing page */
