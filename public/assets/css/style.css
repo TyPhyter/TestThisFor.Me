@@ -107,6 +107,10 @@ nav a.sidenav-trigger.profile {
   background-color: transparent;
 }
 
+.collection i, .collection img {
+  margin-top: 10px;
+}
+
 /*  Project Detail * * */
 
 pre {
