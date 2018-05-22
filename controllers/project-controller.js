@@ -10,7 +10,7 @@ router.post('/projects', (req, res) => {
         title: req.body.title,
         body: req.body.body,
         repoUrl: req.body.repoUrl,
-        hostedUrl: req.body.repoUrl,
+        hostedUrl: req.body.hostedUrl,
         //id of the author
         UserId: req.body.UserId
     }

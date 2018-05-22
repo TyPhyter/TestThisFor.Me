@@ -1,6 +1,6 @@
 <div class="row center-align">
     <h4>Post a Project</h4>
-</div> 
+</div>
 <div class="row">
     <form class="col s12">
         <div class="row">
@@ -10,19 +10,54 @@
             </div>
             <div class="input-field col s12">
                 <input placeholder="https://github.com/your_info" id="repoUrl" type="text" class="validate">
-                <label for="project_title">Repo URL:</label>
+                <label for="repoUrl">Repo URL:</label>
             </div>
             <div class="input-field col s12">
                 <input placeholder="https://yoursite.com/your_info" id="hostedUrl" type="text" class="validate">
-                <label for="project_title">Hosted URL:</label>
+                <label for="hostedUrl">Hosted URL:</label>
             </div>
             <div class="input-field col s12">
                 <textarea style="height: 90px" id="bodyText" class="materialize-textarea" placeholder="Tell us how to interact with your project and what you want to know about it"></textarea>
-                <label for="textarea1">About your project</label>
+                <label for="bodyText">About your project</label>
             </div>
-            <div class="input-field col s12">
-                <button class="btn-large">POST</button>
+            <div class="input-field col s12 center-align">
+                <button class="btn-large" id="post">POST</button>
             </div>
         </div>
     </form>
 </div>
+<script>
+    var postButton = document.querySelector('#post');
+    postButton.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        let localUri = 'http://localhost:8080/projects';
+        let productionUri = 'http://www.testthisfor.me/projects';
+        let title = document.querySelector('#project_title').value.trim();
+        let repoUrl = document.querySelector('#repoUrl').value.trim();
+        let hostedUrl = document.querySelector('#hostedUrl').value.trim();
+        let bodyText = document.querySelector('#bodyText').value.trim();
+        let UserId = parseInt(window.location.pathname.split('/')[3]);
+        fetch(productionUri, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title: title,
+                body: bodyText,
+                repoUrl: repoUrl,
+                hostedUrl: hostedUrl,
+                //id of the author
+                UserId: UserId
+            }),
+            // redirect: 'follow'
+        })
+            .then((response) => {
+                //maybe save token here
+                console.log(response);
+                redirectUri = response.url;
+                // return response.json();
+                window.location.href = redirectUri;
+            })
+    });
+</script>
