@@ -1,17 +1,9 @@
-// tabs to work
-$(document).ready(function(){
-    $('.tabs').tabs();
-  });
-  
-// collapsible items
-$(document).ready(function(){
-  $('.collapsible').collapsible();
-});
-
-
-// Initialize Mobile Nav - Sidebar
+// Initialize
 $(document).ready(function() {
-    $(".sidenav").sidenav();
-  });
-  
-  
+  // tabs to work
+  $(".tabs").tabs();
+  // collapsible items
+  $(".collapsible").collapsible();
+  // Initialize Mobile Nav - Sidebar
+  $(".sidenav").sidenav();
+});
