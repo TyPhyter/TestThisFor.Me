@@ -52,6 +52,13 @@ router.get('/projects/user/:id', (req, res) => {
 
 });
 
+//get page for posting Projects by user id
+router.get('/projects/post/:userid', (req, res) => {
+    let userid = req.params.id;
+    res.render('projectMaker', { id });
+
+});
+
 
 //delete Project
 module.exports = router;
