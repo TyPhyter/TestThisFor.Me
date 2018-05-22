@@ -7,14 +7,16 @@ signUpSubmitButton.addEventListener('click', function (evt) {
     let productionUri = 'https://fast-sierra-15363.herokuapp.com/users/';
     let su_email = document.querySelector('#su_email').value.trim();
     let su_password = document.querySelector('#su_password').value.trim();
-    fetch(localUri, {
+    let displayName = document.querySelector('#su_user_name').value.trim();
+    fetch(productionUri, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             email: su_email,
-            pass: su_password
+            pass: su_password,
+            displayName: displayName
         })
     })
     .then((response) => {
@@ -35,7 +37,7 @@ loginSubmitButton.addEventListener('click', function (evt) {
     let productionUri = 'https://fast-sierra-15363.herokuapp.com/users/login';
     let li_email = document.querySelector('#li_user_name').value.trim();
     let li_password = document.querySelector('#li_password').value.trim();
-    fetch(localUri, {
+    fetch(productionUri, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
