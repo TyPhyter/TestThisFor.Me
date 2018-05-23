@@ -2,10 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 var db = require('./models');
-var OAuth = require('oauthio');
 const cors = require('cors');
-
-OAuth.initialize('CZqVop1givjJzfVWLm4K3YCalTg', 'AMG1CCYUZ9fUQbtHKVcDQJPYBe4');
 
 
 const app = express();

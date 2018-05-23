@@ -22,20 +22,21 @@ router.post('/tests', (req, res) => {
 });
 
 //get Tests, all or by id
-router.get('/tests/:id?', (req, res) => {
-    if (req.params.id) {
-        let id = req.params.id;
-        db.Test.findById(id)
-            .then((test) => {
-                res.send(test);
-            });
-    } else {
-        db.Test.findAll({})
-            .then((tests) => {
-                res.send(tests);
-            });
-    }
-});
+//this is overriding my /tests/post route, duh
+// router.get('/tests/:id?', (req, res) => {
+//     if (req.params.id) {
+//         let id = req.params.id;
+//         db.Test.findById(id)
+//             .then((test) => {
+//                 res.send(test);
+//             });
+//     } else {
+//         db.Test.findAll({})
+//             .then((tests) => {
+//                 res.send(tests);
+//             });
+//     }
+// });
 
 //get Tests by project id
 router.get('/tests/project/:id', (req, res) => {
