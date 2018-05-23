@@ -12,7 +12,8 @@ router.post('/projects', (req, res) => {
         repoUrl: req.body.repoUrl,
         hostedUrl: req.body.hostedUrl,
         //id of the author
-        UserId: req.body.UserId
+        UserId: req.body.UserId,
+        authorAvatarUrl: req.body.authorAvatarUrl
     }
 
 
