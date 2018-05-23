@@ -45,6 +45,7 @@
 
         <!-- My Project Dashboard -->
         <div class="dash container">
+            <div id="projId" style="display:none;">{{ id }}</div>
             {{#if authorAvatarUrl}}
             <img style="width:250px" class="circle" src="{{ authorAvatarUrl }}"> 
             {{/if}} 
@@ -67,7 +68,7 @@
             </pre> --}}
 
             <div class="center-align">
-                <button>Test This</button>
+                <button id="testThisBtn" class="btn btn-large">Test This</button>
             </div>
 
             <div class="divider"></div>
@@ -96,3 +97,17 @@
             </div>
         </div>
     </footer>
+
+    <script>
+
+        var testThisBtn = document.querySelector('#testThisBtn');
+        testThisBtn.addEventListener('click', function (evt) {
+            evt.preventDefault();
+
+            var projId = document.querySelector('#projId').textContent;
+            sessionStorage.setItem('ttfmcurrentProjId', projId);
+
+            window.location.href = window.location.origin + '/tests/post';
+        });
+        
+    </script>

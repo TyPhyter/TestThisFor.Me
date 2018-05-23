@@ -1,0 +1,84 @@
+<main>
+    <nav>
+        <!--Beginning Main Nav -->
+        <div class="nav-wrapper grey lighten-4">
+            <div class="container">
+                <a href="#!" class="brand-logo">
+                    <img id="ttfmLogo" src="/assets/img/ttfm-logo-clr.svg" alt="TestThisForMe Logo" width="50">
+                    <span class="hide-on-med-and-down" id="navTitle">TestThisFor.Me</span>
+                </a>
+                <ul class="right hide-on-med-and-down indigo-text text-darken-4">
+                    <li>
+                        <a href="/projects/">All Projects</a>
+                    </li>
+                    <li>
+                        <a href="#" id="myProjectsButton">My Projects</a>
+                    </li>
+                    {{!--
+                    <li>
+                        <a href="#" data-target="slide-out" class="sidenav-trigger profile">My Profile</a>
+                    </li> --}} {{!--
+                    <li>
+                        <a href="#">Login/Sign Up</a>
+                    </li> --}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row"></div>
+        <div class="row"></div>
+        <h2 id="projectName">Their Project Name</h2>
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="row">
+                        <div class="card-header">
+                            <h2 class="feedback-heading">How Did It Go?</h2>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <ul>
+                                        <li class="col s4">
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" />
+                                                <span>Everything worked!</span>
+                                            </label>
+                                        </li>
+                                        <li class="col s4">
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" />
+                                                <span>Looks good, but has a few issues.</span>
+                                            </label>
+                                        </li>
+                                        <li class="col s4">
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" />
+                                                <span>So broke, it eats sleep for dinner.</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                        <label for="textarea1">Specific Feedback and Comments</label>
+                                    </div>
+                                </div>
+                                <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    var currentProjId = sessionStorage.getItem('ttfmcurrentProjId');
+    console.log(currentProjId);
+</script>
