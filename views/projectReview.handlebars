@@ -104,8 +104,8 @@
                 break;
             }
         }
-        var bodyText = document.querySelector('#textarea1').textContent.trim();
-        let productionUri = 'http://www.testthisfor.me/tests';
+        var bodyText = document.querySelector('#textarea1').value.trim();
+        let productionUri = '/tests';
         fetch(productionUri, {
             method: 'POST',
             headers: {
