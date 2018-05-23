@@ -80,5 +80,11 @@
 </main>
 <script>
     var currentProjId = sessionStorage.getItem('ttfmcurrentProjId');
+    sessionStorage.removeItem('ttfmcurrentProjId');
+    var currentProjTitle = sessionStorage.getItem('ttfmcurrentProjTitle');
+    sessionStorage.removeItem('ttfmcurrentProjTitle');
     console.log(currentProjId);
+    if(!currentProjId){
+        window.history.back();
+    }
 </script>

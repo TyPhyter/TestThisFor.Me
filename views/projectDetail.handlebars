@@ -105,9 +105,12 @@
             evt.preventDefault();
 
             var projId = document.querySelector('#projId').textContent;
+            var projTitle = document.querySelector('h4.avail').textContent;
             sessionStorage.setItem('ttfmcurrentProjId', projId);
+            sessionStorage.setItem('ttfmcurrentProjTitle', projTitle);
+            
 
             window.location.href = window.location.origin + '/tests/post';
         });
-        
+
     </script>
