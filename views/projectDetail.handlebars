@@ -70,8 +70,27 @@
             <div class="center-align">
                 <button id="testThisBtn" class="btn btn-large">Test This</button>
             </div>
+            <br>
+            <br>
 
             <div class="divider"></div>
+            <div class="row">
+                <ul class="collapsible">
+                    {{#each Tests}}
+                    <li>
+                        <div class="collapsible-header">
+                            <span class="float-left">
+                                <i class="material-icons iconFB">flag</i>
+                            </span>{{this.dataValues.authorDisplayName}}
+                        </div>
+                        <div class="collapsible-body">
+                            <div>SCORE: {{this.dataValues.score}}</div>
+                            <span>{{this.dataValues.body}}</span>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
             <h5>Comments</h5>
             <div class="comment-entry row">
                 <form class="col s12">

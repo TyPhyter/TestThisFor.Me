@@ -28,7 +28,10 @@ router.post('/projects', (req, res) => {
 router.get('/projects/:id?', (req, res) => {
     if (req.params.id) {
         let id = req.params.id;
-        db.Project.findById(id)
+        db.Project.findOne({
+            where: { id: id },
+            include: [{ all: true }]
+        })
             .then((project) => {
                 console.log(project.dataValues);
                 res.render('projectDetail', project.dataValues);
