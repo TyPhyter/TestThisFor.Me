@@ -44,12 +44,18 @@
 
         <!-- My Project Dashboard -->
         <div class="dash container">
-            <img class="circle" src="/assets/img/profile.jpg">
+            {{#if avatarUrl}}
+            <img class="circle" src="{{ avatarUrl }}"> 
+            {{/if}} 
+            {{#unless avatarUrl}}
+            <i class="material-icons circle">person</i>
+            {{/unless}}
             <h4 class="avail">{{ title }}</h4>
             <p>{{ repoUrl }}</p>
+            <p>{{ hostedUrl }}</p>
             <p>{{ body }}</p>
-            
-            <p>Lorem ipsum dolor amet coloring book synth hella literally brooklyn enamel pin af meditation palo santo readymade
+
+            {{!-- <p>Lorem ipsum dolor amet coloring book synth hella literally brooklyn enamel pin af meditation palo santo readymade
                 kickstarter celiac snackwave. Chartreuse stumptown +1 kale chips iPhone. Ennui lyft health goth organic fixie
                 vegan. Glossier cardigan actually pinterest beard.</p>
             <p>Hammock forage scenester crucifix try-hard drinking vinegar chillwave taiyaki. Hammock fanny pack raclette meh
@@ -57,8 +63,8 @@
                 marfa tumeric.</p>
             <pre>
                 var names = ["Mike","Matt","Nancy","Adam","Jenny","Nancy","Carl"]; 
-            </pre>
-            
+            </pre> --}}
+
             <div class="divider"></div>
             <h5>Comments</h5>
             <div class="comment-entry row">

@@ -60,18 +60,23 @@
         </ul>
         <div id="trending" class="col s12">
             <ul class="collection">
-                {{#each this}} {{#if this.title}}  {{#unless this.closed }}
+                {{#each this}} {{#if this.title}} {{#unless this.closed }}
                 <li class="collection-item avatar">
                     <a href="/projects/{{this.id}}">
+                        {{#if avatarUrl}}
+                        <img class="circle" src="{{ this.authorAvatarUrl }}">
+                        {{/if}}
+                        {{#unless this.authorAvatarUrl}}
                         <i class="material-icons circle">person</i>
+                        {{/unless}}
                         <h5>{{ this.title }}</h5>
                         <a href="#!" class="secondary-content">
                             <i class="material-icons light-green-text accent-3">arrow_forward</i>
                         </a>
                     </a>
                 </li>
-                {{/unless}}{{/if}} {{/each}}
-                {{!-- <li class="collection-item avatar">
+                {{/unless}}{{/if}} {{/each}} {{!--
+                <li class="collection-item avatar">
                     <i class="material-icons circle">person</i>
                     <h5>Question Title Goes Here</h5>
                     <a href="#!" class="secondary-content">

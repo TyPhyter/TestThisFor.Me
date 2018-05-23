@@ -19,16 +19,16 @@ signUpSubmitButton.addEventListener('click', function (evt) {
             displayName: displayName
         })
     })
-    .then((response) => {
-        // maybe save token here
-        console.log(response);
-        redirectUri = response.url;
-        // return response.json();
-        window.location.href = redirectUri;
-    })
-    .then((json) => {
-        console.log(json);
-    });
+        .then((response) => {
+            // maybe save token here
+            console.log(response);
+            redirectUri = response.url;
+            // return response.json();
+            window.location.href = redirectUri;
+        })
+        .then((json) => {
+            console.log(json);
+        });
 });
 
 //login submit
@@ -52,16 +52,16 @@ loginSubmitButton.addEventListener('click', function (evt) {
         }),
         // redirect: 'follow'
     })
-    .then((response) => {
-        //maybe save token here
-        console.log(response);
-        redirectUri = response.url;
-        // return response.json();
-        window.location.href = redirectUri;
-    })
-    .then((json) => {
-        console.log(json);
-    });
+        .then((response) => {
+            //maybe save token here
+            console.log(response);
+            redirectUri = response.url;
+            // return response.json();
+            window.location.href = redirectUri;
+        })
+        .then((json) => {
+            console.log(json);
+        });
 });
 
 //github button
@@ -77,6 +77,15 @@ githubButton.addEventListener('click', function (evt) {
         githubToken.me()
             .then((user) => {
                 githubUser = user;
+                
+                sessionStorage.setItem('ttfmgithubID', githubUser.id);
+                sessionStorage.setItem('ttfmgithubName', githubUser.name);
+                sessionStorage.setItem('ttfmgithubAlias', githubUser.alias);
+                sessionStorage.setItem('ttfmavatarUrl', githubUser.avatar);
+                    
+                    githubUser.name,
+                    githubUser.alias,
+                    githubUser.avatar
                 console.log(githubUser);
                 fetch('http://www.testthisfor.me/users/github', {
                     method: 'POST',
@@ -92,16 +101,16 @@ githubButton.addEventListener('click', function (evt) {
                     // mode: 'cors',
                     // cache: 'default'
                 })
-                .then((response) => {
-                    //maybe save token here
-                    console.log(response);
-                    redirectUri = response.url;
-                    // return response.json();
-                    window.location.href = redirectUri;
-                })
-                .then((json) => {
-                    console.log(json);
-                });
+                    .then((response) => {
+                        //maybe save token here
+                        console.log(response);
+                        redirectUri = response.url;
+                        // return response.json();
+                        window.location.href = redirectUri;
+                    })
+                    .then((json) => {
+                        console.log(json);
+                    });
             });
         console.log(githubToken);
 

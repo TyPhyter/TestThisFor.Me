@@ -36,7 +36,10 @@
                         <img src="/assets/img/profile-bg.jpg">
                     </div>
                     <a href="#avatar">
-                        <img class="circle" src="{{ avatarUrl }}">
+                        {{#if avatarUrl}}
+                        <img class="circle" src="{{ avatarUrl }}"> {{/if}} {{#unless avatarUrl}}
+                        <i class="material-icons circle">person</i>
+                        {{/unless}}
                     </a>
                     <a href="#alias">
                         <span class="white-text name">{{ githubAlias }}</span>
@@ -59,7 +62,7 @@
             </li>
             <li>
                 <a href="#!">Credits
-                    <span class="badge red-text" data-badge-caption="Unread">{{ points }}</span>
+                    <span class="badge light-green-text" data-badge-caption="">{{ points }}</span>
                 </a>
             </li>
             <li>
@@ -92,15 +95,19 @@
                     {{#each Projects}} {{#if this.dataValues.title}} {{#unless this.dataValues.closed }}
                     <li class="collection-item avatar">
                         <a href="/projects/{{this.dataValues.id}}">
+                            {{#if avatarUrl}}
+                            <img class="circle" src="{{ avatarUrl }}"> 
+                            {{/if}} 
+                            {{#unless avatarUrl}}
                             <i class="material-icons circle">person</i>
+                            {{/unless}}
                             <h5>{{ this.dataValues.title }}</h5>
                             <a href="#!" class="secondary-content">
                                 <i class="material-icons light-green-text accent-3">arrow_forward</i>
                             </a>
                         </a>
                     </li>
-                    {{/unless}}{{/if}} {{/each}}
-                    {{#unless Projects.[0].dataValues.title}}
+                    {{/unless}}{{/if}} {{/each}} {{#unless Projects.[0].dataValues.title}}
                     <div style="text-align:center; margin-top:50px">
                         <div>Looks like you haven't posted any projects yet!</div>
                         <a style="margin-top:25px" class="btn-large" href="/projects/post/{{ id }}">Let's Fix That</a>

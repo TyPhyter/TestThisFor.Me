@@ -37,6 +37,9 @@
         let hostedUrl = document.querySelector('#hostedUrl').value.trim();
         let bodyText = document.querySelector('#bodyText').value.trim();
         let UserId = parseInt(window.location.pathname.split('/')[3]);
+
+        let authorAvatarUrl = sessionStorage.getItem('ttfmavatarUrl');
+
         fetch(productionUri, {
             method: 'POST',
             headers: {
@@ -48,7 +51,8 @@
                 repoUrl: repoUrl,
                 hostedUrl: hostedUrl,
                 //id of the author
-                UserId: UserId
+                UserId: UserId,
+                authorAvatarUrl: authorAvatarUrl
             }),
             // redirect: 'follow'
         })
