@@ -44,19 +44,19 @@
                                     <ul>
                                         <li class="col s4">
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" />
+                                                <input class="with-gap" name="group3" type="radio" value="5" />
                                                 <span>Everything worked!</span>
                                             </label>
                                         </li>
                                         <li class="col s4">
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" />
+                                                <input class="with-gap" name="group3" type="radio" value="3" />
                                                 <span>Looks good, but has a few issues.</span>
                                             </label>
                                         </li>
                                         <li class="col s4">
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" />
+                                                <input class="with-gap" name="group3" type="radio" value="1" />
                                                 <span>So broke, it eats sleep for dinner.</span>
                                             </label>
                                         </li>
@@ -84,9 +84,50 @@
     var currentProjTitle = sessionStorage.getItem('ttfmcurrentProjTitle');
     sessionStorage.removeItem('ttfmcurrentProjTitle');
     console.log(currentProjId, currentProjTitle);
-    if(!currentProjId){
+    if (!currentProjId) {
         window.history.back();
     }
 
     document.querySelector('#projectName').textContent = currentProjTitle;
+
+    var submitTest = document.querySelector('button[type="submit"]');
+    submitTest.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        var radios = document.getElementsByName('group3');
+        var value;
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                // do whatever you want with the checked radio
+                value = radios[i].value;
+
+                // only one radio can be logically checked, don't check the rest
+                break;
+            }
+        }
+        var bodyText = document.querySelector('#textarea1').textContent.trim();
+        let productionUri = 'http://www.testthisfor.me/tests';
+        fetch(productionUri, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                body: bodyText,
+                score: value,
+                ProjectId: currentProjId,
+                UserId: sessionStorage.getItem('ttfmid');
+            }),
+            // redirect: 'follow'
+        })
+            .then((response) => {
+                //maybe save token here
+                console.log(response);
+                redirectUri = response.url;
+                // return response.json();
+                window.location.href = redirectUri;
+            })
+            .then((json) => {
+                console.log(json);
+            });
+    });
 </script>

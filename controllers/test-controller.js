@@ -16,7 +16,7 @@ router.post('/tests', (req, res) => {
 
     db.Test.create(test)
         .then((test) => {
-            res.send(test);
+            res.redirect(`/projects/${req.body.ProjectId}`);
         });
     // res.render('index', {});
 });
