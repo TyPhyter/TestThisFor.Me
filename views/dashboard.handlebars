@@ -37,7 +37,8 @@
                     </div>
                     <a href="#avatar">
                         {{#if avatarUrl}}
-                        <img class="circle" src="{{ avatarUrl }}"> {{/if}} {{#unless avatarUrl}}
+                        <img class="circle" src="{{ avatarUrl }}"> {{/if}} 
+                        {{#unless avatarUrl}}
                         <i class="material-icons circle">person</i>
                         {{/unless}}
                     </a>
@@ -95,10 +96,10 @@
                     {{#each Projects}} {{#if this.dataValues.title}} {{#unless this.dataValues.closed }}
                     <li class="collection-item avatar">
                         <a href="/projects/{{this.dataValues.id}}">
-                            {{#if this.dataValues.avatarUrl}}
-                            <img class="circle" src="{{ this.dataValues.avatarUrl }}"> 
+                            {{#if this.dataValues.authorAvatarUrl}}
+                            <img class="circle" src="{{ this.dataValues.authorAvatarUrl }}"> 
                             {{/if}} 
-                            {{#unless this.dataValues.avatarUrl}}
+                            {{#unless this.dataValues.authorAvatarUrl}}
                             <i class="material-icons circle">person</i>
                             {{/unless}}
                             <h5>{{ this.dataValues.title }}</h5>

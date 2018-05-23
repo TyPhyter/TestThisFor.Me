@@ -64,7 +64,7 @@
                 {{#each this}} {{#if this.title}} {{#unless this.closed }}
                 <li class="collection-item avatar">
                     <a href="/projects/{{this.id}}">
-                        {{#if avatarUrl}}
+                        {{#if this.authorAvatarUrl}}
                         <img class="circle" src="{{ this.authorAvatarUrl }}">
                         {{/if}}
                         {{#unless this.authorAvatarUrl}}
