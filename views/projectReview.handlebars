@@ -28,7 +28,7 @@
     <div class="container">
         <div class="row"></div>
         <div class="row"></div>
-        <h2 id="projectName">Their Project Name</h2>
+        <h2 id="projectName">Project Title</h2>
         <div class="row">
             <div class="col s12">
                 <div class="card">
@@ -87,4 +87,6 @@
     if(!currentProjId){
         window.history.back();
     }
+
+    document.querySelector('#projectName').textContent = currentProjTitle;
 </script>
