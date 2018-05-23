@@ -4,6 +4,9 @@ module.exports = function(sequelize, DataTypes) {
         title: DataTypes.STRING,
         body: DataTypes.TEXT,
         score: DataTypes.INTEGER,
+        authorAvatarUrl: DataTypes.STRING,
+        authorDisplayName: DataTypes.STRING,
+        authorGithubName: DataTypes.STRING,
         accepted: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
