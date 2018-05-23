@@ -60,7 +60,7 @@ router.get('/tests/user/:id', (req, res) => {
 });
 //delete Test
 
-router.get('tests/post', (req, res) => {
+router.get('/tests/post', (req, res) => {
     res.render('projectReview');
 });
 
