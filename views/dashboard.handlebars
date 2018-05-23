@@ -107,7 +107,13 @@
                             </a>
                         </a>
                     </li>
-                    {{/unless}}{{/if}} {{/each}} {{#unless Projects.[0].dataValues.title}}
+                    {{/unless}}{{/if}} {{/each}} 
+                    {{#if Projects.[0].dataValues.title}}
+                    <div style="text-align:center; margin-top:50px">
+                        <a style="margin-top:25px" class="btn-large" href="/projects/post/{{ id }}">Post a Project</a>
+                    </div>
+                    {{/if}}
+                    {{#unless Projects.[0].dataValues.title}}
                     <div style="text-align:center; margin-top:50px">
                         <div>Looks like you haven't posted any projects yet!</div>
                         <a style="margin-top:25px" class="btn-large" href="/projects/post/{{ id }}">Let's Fix That</a>
