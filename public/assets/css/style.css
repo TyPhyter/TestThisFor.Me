@@ -155,4 +155,9 @@ pre {
 #repoPicker .card {
   padding: 5px 10px 5px 30px;
   margin: 2px;
+
+
+}
+.collection li h5 {
+  height: 30px;
 }
