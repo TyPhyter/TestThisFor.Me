@@ -201,6 +201,24 @@ router.get('/dashboard/:id', function (req, res) {
 
 });
 
+router.get('/dashboard/github/:id', function (req, res) {
+    let githubID = req.params.id;
+    if (userID) {
+        db.User.findOne({
+            where: { githubID: githubID },
+            include: [{ all: true }]
+        })
+            .then((user) => {
+                console.log(user);
+                res.render('dashboard', user.dataValues);
+            })
+
+    } else {
+        res.redirect('/');
+    }
+
+});
+
 //TO DO: delete user
 
 module.exports = router;

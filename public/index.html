@@ -71,11 +71,12 @@
                 <div class="card-tabs">
                     <ul class="tabs tabs-fixed-width">
                         <li class="tab">
-                            <a href="#test4">Sign Up</a>
-                        </li>
-                        <li class="tab">
                             <a href="#test5">Sign In</a>
                         </li>
+                        <li class="tab">
+                            <a href="#test4">Sign Up</a>
+                        </li>
+
                     </ul>
                 </div>
                 <div class="card-content grey lighten-4">
@@ -85,26 +86,27 @@
                                 <div class="row">
                                     <form class="col s12">
                                         <div class="row">
-                                            <div class="input-field col s6">
+                                            <!-- <div class="input-field col s6">
                                                 <input id="first_name" type="text" class="validate">
                                                 <label for="first_name">First Name</label>
                                             </div>
                                             <div class="input-field col s6">
                                                 <input id="last_name" type="text" class="validate">
                                                 <label for="last_name">Last Name</label>
-                                            </div>
-                                            <div class="input-field col s6">
+                                            </div> -->
+                                            <div class="input-field col s12">
                                                 <input id="su_user_name" type="text" class="validate">
                                                 <label for="su_user_name">User Name</label>
                                             </div>
-                                            <div class="input-field col s6">
+                                            <div class="input-field col s12">
+                                                    <input id="su_email" type="email" class="validate">
+                                                    <label for="su_email">Email</label>
+                                            </div>
+                                            <div class="input-field col s12">
                                                 <input id="su_password" type="password" class="validate">
                                                 <label for="su_password">Password</label>
                                             </div>
-                                            <div class="input-field col s12">
-                                                <input id="su_email" type="email" class="validate">
-                                                <label for="su_email">Email</label>
-                                            </div>
+                                            
                                         </div>
                                         <button id="su_submit" class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
                                         </button>
@@ -120,9 +122,14 @@
                                     <h3>Sign in with either your GitHub account or username!</h3>
                                 </div>
                                 <div class="row">
-                                    <a href="">
+                                    <a href="" class="center-align">
                                         <img id="gitLogo" src="./assets/img/if_mark-github_298822.png">
+                                        <div class="black-text">Sign In</div>
                                     </a>
+                                    <br>
+                                    <div class="center-align">
+                                        -or-
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <form class="col s12">
