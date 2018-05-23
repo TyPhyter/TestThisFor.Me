@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
         passwordHash: DataTypes.STRING,
         displayName: DataTypes.STRING,
         githubID: DataTypes.STRING,
-        githubName: DatTypes.STRING,
+        githubName: DataTypes.STRING,
         avatarUrl: DatTypes.STRING,
         //
         //GAMIFICATION PROPS
