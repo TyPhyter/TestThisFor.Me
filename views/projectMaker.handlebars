@@ -110,9 +110,9 @@
                 label.classList.add('active');
             });
             hostedUrl.value = selectedRepo.homepage;
-            repoUrl = selectedRepo.html_url;
-            title = selectedRepo.full_name;
-            bodyText = '"' + selectedRepo.description + '"';
+            repoUrl.value = selectedRepo.html_url;
+            title.value = selectedRepo.full_name;
+            bodyText.value = '"' + selectedRepo.description + '"';
             
         } else if (evt.target.parentNode.classList.contains('card')) {
             var targetRepoCard = evt.target.parentNode;
@@ -126,9 +126,9 @@
                 label.classList.add('active');
             });
             hostedUrl.value = selectedRepo.homepage;
-            repoUrl = selectedRepo.html_url;
-            title = selectedRepo.full_name;
-            bodyText = '"' + selectedRepo.description + '"';
+            repoUrl.value = selectedRepo.html_url;
+            title.value = selectedRepo.full_name;
+            bodyText.value = '"' + selectedRepo.description + '"';
         }
 
     });
