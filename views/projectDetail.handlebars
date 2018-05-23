@@ -81,17 +81,19 @@
                     <li>
                         <div class="collapsible-header">
                             <div>
-                                {{#if avatarUrl}}
-                                <img class="circle" src="{{ this.dataValues.authorAvatarUrl }}"> {{/if}} 
-                                {{#unless avatarUrl}}
+                                {{#if this.dataValues.authorAvatarUrl}}
+                                <img class="circle" src="{{ this.dataValues.authorAvatarUrl }}"> 
+                                {{/if}} 
+                                {{#unless this.dataValues.authorAvatarUrl}}
                                 <i class="material-icons circle">person</i>
                                 {{/unless}}
                             </div>
-                            <div>
-                                Tester:{{this.dataValues.authorDisplayName}}
+                            <div style="width:90%">
+                                Tester: {{this.dataValues.authorDisplayName}}
+                                <div>Score: {{this.dataValues.score}}/5</div>
                             </div>
-                            <div style="position: absolute; right:20px; color: #777">
-                                <i class="material-icons iconFB">flag</i>
+                            <div>
+                                <i style="color: #777"class="material-icons iconFB">flag</i>
                             </div>
                         </div>
                         <div class="collapsible-body">
