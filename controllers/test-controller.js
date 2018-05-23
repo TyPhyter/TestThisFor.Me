@@ -9,6 +9,7 @@ router.post('/tests', (req, res) => {
     let test = {
         title: req.body.title,
         body: req.body.body,
+        score: req.body.score,
         ProjectId: req.body.ProjectId,
         UserId: req.body.UserId
     }
