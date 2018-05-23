@@ -4,6 +4,10 @@ module.exports = function(sequelize, DataTypes) {
         body: DataTypes.TEXT,
         repoUrl: DataTypes.STRING,
         hostedUrl: DataTypes.STRING,
+        views: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0
+        },
         closed: {
             type: DataTypes.BOOLEAN,
             defaultValue: false

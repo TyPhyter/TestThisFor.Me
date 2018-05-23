@@ -76,28 +76,58 @@ router.post('/users', (req, res) => {
 router.post('/users/github', (req, res) => {
 
     let githubID = req.body.githubID;
+    let githubName = req.body.githubName;
+    let githubAlias = req.body.githubAlias;
+    let avatarUrl = req.body.avatarUrl;
 
-    db.User.findOrCreate({ where: { githubID } })
-        .then((responseArray) => {
-            //if the second index ([1]) is false, then the user already existed
-            let user = responseArray[0];
-            let createdNew = responseArray[1];
-            if (createdNew) {
-                let date = new Date();
-                //initialize the logins 'array' with the account created date
-                user.logins = [date.toISOString().slice(0, 19).replace('T', ' ')];
-                user.save().then(() => { });
+    db.User.findOne({ where: { githubID: githubID } })
+        .then((user) => {
+            //if we match a record, then the id is already registered
+            if (user) {
+                res.redirect(`/dashboard/${user.id}`);
             } else {
-                let date = new Date();
-                //get logins array, push new date, set array, save
-                let loginsArray = user.get('logins');
-                loginsArray.push(date.toISOString().slice(0, 19).replace('T', ' '));
-                user.logins = loginsArray;
-                user.save().then(() => {});
+                //no user, so create account
+                // Store hash in your password DB.
+                db.User.create({ githubID, githubName, githubAlias, avatarUrl })
+                    .then((user) => {
+                        //mimicking findOrCreate, return away with a 'created' flag in index [1]
+                        //TO DO: render dashboard
+                        let date = new Date();
+                        //initialize the logins 'array' with the account created date
+                        user.logins = [date.toISOString().slice(0, 19).replace('T', ' ')];
+                        user.save().then(() => { });
+                        res.redirect(`/dashboard/${user.id}`);
+                    });
             }
-            // res.redirect(`/dashboard/${user.id}`);
-            res.send(user);
+
+
         })
+        .catch((err) => {
+            console.log(err);
+        });
+
+
+    // db.User.findOrCreate({ where: { githubID } })
+    //     .then((responseArray) => {
+    //         //if the second index ([1]) is false, then the user already existed
+    //         let user = responseArray[0];
+    //         let createdNew = responseArray[1];
+    //         if (createdNew) {
+    //             let date = new Date();
+    //             //initialize the logins 'array' with the account created date
+    //             user.logins = [date.toISOString().slice(0, 19).replace('T', ' ')];
+    //             user.save().then(() => { });
+    //         } else {
+    //             let date = new Date();
+    //             //get logins array, push new date, set array, save
+    //             let loginsArray = user.get('logins');
+    //             loginsArray.push(date.toISOString().slice(0, 19).replace('T', ' '));
+    //             user.logins = loginsArray;
+    //             user.save().then(() => { });
+    //         }
+    //         // res.redirect(`/dashboard/${user.id}`);
+    //         res.send(user);
+    //     })
 });
 
 router.post('/users/login', (req, res) => {
@@ -107,9 +137,9 @@ router.post('/users/login', (req, res) => {
         //find user with provided email
         //include all relevant info on user object
         //ie Projects, Tests...
-        db.User.findOne({ 
+        db.User.findOne({
             where: { email: email },
-            include: [{ all: true }] 
+            include: [{ all: true }]
         })
             .then((user) => {
                 if (user) {
@@ -126,7 +156,7 @@ router.post('/users/login', (req, res) => {
                                 let loginsArray = user.get('logins');
                                 loginsArray.push(date.toISOString().slice(0, 19).replace('T', ' '));
                                 user.logins = loginsArray;
-                                user.save().then(() => {});
+                                user.save().then(() => { });
                                 res.user = user;
                                 res.redirect(`/dashboard/${user.id}`);
                                 // res.json(user);
@@ -153,22 +183,22 @@ router.post('/users/login', (req, res) => {
 
 });
 
-router.get('/dashboard/:id', function(req, res) {
+router.get('/dashboard/:id', function (req, res) {
     let userID = req.params.id;
-    if(userID){
-        db.User.findOne({ 
+    if (userID) {
+        db.User.findOne({
             where: { id: userID },
-            include: [{ all: true }] 
+            include: [{ all: true }]
         })
-        .then((user) => {
-            console.log(user);
-            res.render('dashboard', user.dataValues);
-        })
-        
+            .then((user) => {
+                console.log(user);
+                res.render('dashboard', user.dataValues);
+            })
+
     } else {
         res.redirect('/');
     }
-    
+
 });
 
 //TO DO: delete user

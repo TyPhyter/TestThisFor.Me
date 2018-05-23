@@ -85,7 +85,9 @@ githubButton.addEventListener('click', function (evt) {
                     },
                     body: JSON.stringify({
                         githubID: githubUser.id,
-                        githubName: githubUser.alias
+                        githubName: githubUser.name,
+                        githubAlias: githubUser.alias,
+                        avatarUrl: githubUser.avatar
                     }),
                     // mode: 'cors',
                     // cache: 'default'
@@ -94,8 +96,8 @@ githubButton.addEventListener('click', function (evt) {
                     //maybe save token here
                     console.log(response);
                     redirectUri = response.url;
-                    return response.json();
-                    // window.location.href = redirectUri;
+                    // return response.json();
+                    window.location.href = redirectUri;
                 })
                 .then((json) => {
                     console.log(json);
