@@ -75,16 +75,26 @@
 
             <div class="divider"></div>
             <div class="row">
+                <h5>Completed Tests</h5>
                 <ul class="collapsible">
                     {{#each Tests}}
                     <li>
                         <div class="collapsible-header">
-                            <span class="float-left">
+                            <div>
+                                {{#if avatarUrl}}
+                                <img class="circle" src="{{ this.dataValues.authorAvatarUrl }}"> {{/if}} 
+                                {{#unless avatarUrl}}
+                                <i class="material-icons circle">person</i>
+                                {{/unless}}
+                            </div>
+                            <div>
+                                Tester:{{this.dataValues.authorDisplayName}}
+                            </div>
+                            <div style="position: absolute; right:20px; color: #777">
                                 <i class="material-icons iconFB">flag</i>
-                            </span>{{this.dataValues.authorDisplayName}}
+                            </div>
                         </div>
                         <div class="collapsible-body">
-                            <div>SCORE: {{this.dataValues.score}}</div>
                             <span>{{this.dataValues.body}}</span>
                         </div>
                     </li>
