@@ -35,11 +35,14 @@
                     <div class="background">
                         <img src="/assets/img/profile-bg.jpg">
                     </div>
-                    <a href="#user">
-                        <img class="circle" src="/assets/img/profile.jpg">
+                    <a href="#avatar">
+                        <img class="circle" src="{{ avatarUrl }}">
+                    </a>
+                    <a href="#alias">
+                        <span class="white-text name">{{ githubAlias }}</span>
                     </a>
                     <a href="#name">
-                        <span class="white-text name">{{ displayName }}</span>
+                        <span class="white-text name">{{ githubName }}</span>
                     </a>
                     <a href="#email">
                         <span class="white-text email">{{ email }}</span>
@@ -61,7 +64,7 @@
             </li>
             <li>
                 <a href="#!">Badges
-                    <span class="new badge" data-badge-caption="Total">05</span>
+                    <span class="new badge" data-badge-caption="Total">{{ badges.length }}</span>
                 </a>
             </li>
             <li>
