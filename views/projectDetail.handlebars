@@ -6,7 +6,7 @@
                 <div class="container">
                     <a href="#!" class="brand-logo">
                         <img id="ttfmLogo" src="/assets/img/ttfm-logo-clr.svg" alt="TestThisForMe Logo" width="50">
-                        <span id="navTitle">TestThisFor.Me</span>
+                        <span class="hide-on-med-and-down" id="navTitle">TestThisFor.Me</span>
                     </a>
                     <ul class="right hide-on-med-and-down indigo-text text-darken-4">
                         <li>
@@ -45,10 +45,10 @@
 
         <!-- My Project Dashboard -->
         <div class="dash container">
-            {{#if avatarUrl}}
-            <img class="circle" src="{{ avatarUrl }}"> 
+            {{#if authorAvatarUrl}}
+            <img class="circle" src="{{ authorAvatarUrl }}"> 
             {{/if}} 
-            {{#unless avatarUrl}}
+            {{#unless authorAvatarUrl}}
             <i class="material-icons circle">person</i>
             {{/unless}}
             <h4 class="avail">{{ title }}</h4>
