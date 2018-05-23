@@ -4,21 +4,22 @@
         <div class="nav-wrapper grey lighten-4">
             <div class="container">
                 <a href="#!" class="brand-logo">
-                    <img src="/assets/img/ttfm-logo-clr.svg" width="50" alt="TestThisForMe Logo">
+                    <img id="ttfmLogo" src="/assets/img/ttfm-logo-clr.svg" alt="TestThisForMe Logo" width="50">
+                    <span id="navTitle">TestThisFor.Me</span>
                 </a>
                 <ul class="right hide-on-med-and-down indigo-text text-darken-4">
                     <li>
-                        <a href="#">Available Projects</a>
+                        <a href="/projects/">All Projects</a>
                     </li>
                     <li>
-                        <a href="#">My Projects</a>
+                        <a href="#" id="myProjectsButton">My Projects</a>
                     </li>
-                    <li>
-                        <a href="#">My Profile</a>
-                    </li>
-                    <li>
+                    {{!-- <li>
+                        <a href="#" data-target="slide-out" class="sidenav-trigger profile">My Profile</a>
+                    </li> --}}
+                    {{!-- <li>
                         <a href="#">Login/Sign Up</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
