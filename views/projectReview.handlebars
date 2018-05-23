@@ -115,6 +115,9 @@
             body: JSON.stringify({
                 body: bodyText,
                 score: radioValue,
+                authorDisplayName: sessionStorage.getItem('ttfmgithubAlias') || sessionStorage.getItem('ttfmdisplayName') || "",
+                authorGithubName: sessionStorage.getItem('ttfmgithubName'),
+                authorAvatarUrl: sessionStorage.getItem('ttfmavatarUrl'),
                 ProjectId: currentProjId,
                 UserId: sessionStorage.getItem('ttfmid')
             }),

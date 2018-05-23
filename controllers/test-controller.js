@@ -10,9 +10,9 @@ router.post('/tests', (req, res) => {
         title: req.body.title,
         body: req.body.body,
         score: req.body.score,
-        authorDisplayName: sessionStorage.getItem('ttfmgithubAlias') || sessionStorage.getItem('ttfmdisplayName') || "",
-        authorGithubName: sessionStorage.getItem('ttfmgithubName'),
-        authorAvatarUrl: sessionStorage.getItem('ttfmavatarUrl'),
+        authorDisplayName: req.body.authorDisplayName,
+        authorGithubName: req.body.authorGithubName,
+        authorAvatarUrl: req.body.authorAvatarUrl,
         ProjectId: req.body.ProjectId,
         UserId: req.body.UserId
     }
