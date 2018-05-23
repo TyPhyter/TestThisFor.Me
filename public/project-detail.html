@@ -86,6 +86,40 @@
                 </form>
             </div>
         </div>
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger" href="#repoPicker">Modal</a>
+
+        <!-- Modal Structure -->
+        <div id="repoPicker" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>Choose a Repository</h4>
+                <!-- <div class="card" style="padding: 5px 10px 5px 30px;" data-repo="http://github.com" data-hosted="https://google.com">
+                    <h6 class="title">Repo Name</h6>
+                    <p>Some details maybe</p>
+                </div>
+                <div class="card" style="padding: 5px 10px 5px 30px;">
+                    <h6>Repo Name</h6>
+                    <p>Some details maybe</p>
+                </div>
+                <div class="card" style="padding: 5px 10px 5px 30px;">
+                    <h6>Repo Name</h6>
+                    <p>Some details maybe</p>
+                </div>
+                <div class="card" style="padding: 5px 10px 5px 30px;">
+                    <h6>Repo Name</h6>
+                    <p>Some details maybe</p>
+                </div>
+                <div class="card" style="padding: 5px 10px 5px 30px;">
+                    <h6>Repo Name</h6>
+                    <p>Some details maybe</p>
+                </div> -->
+
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="waves-effect waves-green btn">Choose</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
 
 
     </main>
@@ -103,6 +137,59 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script>
+        sessionStorage.setItem('ttfmgithubAlias', 'TyPhyter');
+        var githubAlias = sessionStorage.getItem('ttfmgithubAlias');
+        var repos;
+        if (githubAlias) {
+            fetch(`https://api.github.com/users/${githubAlias}/repos?sort="updated"`)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((json) => {
+                    repos = json;
+                    console.log(repos);
+                    var modalContent = document.querySelector('#repoPicker .modal-content');
+                    for (var i = 0; i < repos.length; i++) {
+                        var newCard = document.createElement('div');
+                        newCard.classList.add('card');
+                        var cardTitle = document.createElement('h6');
+                        cardTitle.textContent = repos[i].full_name;
+                        var cardDetail = document.createElement('p');
+                        cardDetail.textContent = "Updated at:" + repos[i].updated_at;
+                        newCard.appendChild(cardTitle);
+                        newCard.appendChild(cardDetail);
+                        newCard.setAttribute('data-index', i);
+                        modalContent.appendChild(newCard);
+                    }
+                });
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+        var selectedRepo = {};
+        document.addEventListener('click', function (evt) {
+            if (evt.target.classList.contains('card')) {
+                var targetRepoCard = evt.target;
+                console.log(targetRepoCard);
+                selectedRepo = repos[targetRepoCard.getAttribute('data-index')];
+                var textArea = document.querySelector('#textarea1');
+                var label = document.querySelector('label[for="textarea1"]');
+                label.classList.add('active');
+                textArea.value = selectedRepo.homepage;
+            } else if (evt.target.parentNode.classList.contains('card')) {
+                var targetRepoCard = evt.target.parentNode;
+                console.log(targetRepoCard);
+                selectedRepo = repos[targetRepoCard.getAttribute('data-index')];
+                var textArea = document.querySelector('#textarea1');
+                var label = document.querySelector('label[for="textarea1"]');
+                label.classList.add('active');
+                textArea.value = selectedRepo.homepage;
+            }
+
+        });
+    </script>
 </body>
 
 </html>
