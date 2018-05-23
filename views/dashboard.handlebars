@@ -95,10 +95,10 @@
                     {{#each Projects}} {{#if this.dataValues.title}} {{#unless this.dataValues.closed }}
                     <li class="collection-item avatar">
                         <a href="/projects/{{this.dataValues.id}}">
-                            {{#if avatarUrl}}
-                            <img class="circle" src="{{ avatarUrl }}"> 
+                            {{#if this.dataValues.avatarUrl}}
+                            <img class="circle" src="{{ this.dataValues.avatarUrl }}"> 
                             {{/if}} 
-                            {{#unless avatarUrl}}
+                            {{#unless this.dataValues.avatarUrl}}
                             <i class="material-icons circle">person</i>
                             {{/unless}}
                             <h5>{{ this.dataValues.title }}</h5>
