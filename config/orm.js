@@ -47,12 +47,4 @@ const orm = {
 
 }
 
-////////////////////
-// USAGE
-////////////////////
-
-//orm.selectAll('burgers');
-//orm.insertOne('burgers', {burger_name: "Chipotle Off the Old Block Burger"});
-//orm.updateOne('burgers', {devoured: true}, {id: 1});
-
 module.exports = orm;
