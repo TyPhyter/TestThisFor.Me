@@ -1,3 +1,5 @@
+//REPLACED WITH MONGOOSE
+
 const connection = require('./connection');
 
 //create an ORM to selectAll(), insertOne(), and updateOne()

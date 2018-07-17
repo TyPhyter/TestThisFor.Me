@@ -71,7 +71,7 @@ var githubUser;
 var serverResponse;
 githubButton.addEventListener('click', function (evt) {
     evt.preventDefault();
-    OAuth.initialize('CZqVop1givjJzfVWLm4K3YCalTg');
+    OAuth.initialize('yjjLE5GugMvVBZz4Qb319CMVVbs');
     OAuth.popup('github').then(github => {
         githubToken = github;
         githubToken.me()
